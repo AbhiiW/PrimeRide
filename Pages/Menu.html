@@ -69,387 +69,128 @@
    </div>
  </div>
  
+ <style>
+  .car-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  .car-card {
+    transition: box-shadow 0.3s ease;
+  }
+  .car-card:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+</style>
+</head>
+<body>
 
- 
-
-<!-- Menu Starting -->
-
-<section id="menu" class="menu section">
-
-  
-    <div class="container section-title aos-init aos-animate" data-aos="fade-up">
-      <hr class="featurette-divider">
-      <h2 class="featurette-heading fw-normal lh-1 labeld">Our Menu<span class="text-body-secondary"> </span></h2>
-      </div>
-  
-    <div class="container">
-  
-      <!-- Main Menu Shower -->
-  
-      <ul class="nav nav-tabs d-flex justify-content-center aos-init aos-animate" data-aos="fade-up" data-aos-delay="100" role="tablist">
-  
-        <li class="nav-item" role="presentation">
-          <a class="nav-link show" data-bs-toggle="tab" data-bs-target="#menu-starters" aria-selected="false" role="tab" tabindex="-1">
-            <h4>Sri Lankan</h4>
-          </a>
-        </li><!-- End tab nav item -->
-  
-        <li class="nav-item" role="presentation">
-          <a class="nav-link" data-bs-toggle="tab" data-bs-target="#menu-breakfast" aria-selected="false" role="tab" tabindex="-1">
-            <h4>Indian</h4>
-          </a><!-- End tab nav item -->
-  
-        </li>
-        <li class="nav-item" role="presentation">
-          <a class="nav-link" data-bs-toggle="tab" data-bs-target="#menu-lunch" aria-selected="false" role="tab" tabindex="-1">
-            <h4>Italian</h4>
-          </a>
-        </li><!-- End tab nav item -->
-  
-        <li class="nav-item" role="presentation">
-          <a class="nav-link active" data-bs-toggle="tab" data-bs-target="#menu-dinner" aria-selected="true" role="tab">
-            <h4>Chinese</h4>
-          </a>
-        </li><!-- End tab nav item -->     
-  
-      </ul>
-  
-      <!-- Sri Lankan Dishes  -->
-      <div class="tab-content aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
-  
-        <div class="tab-pane fade" id="menu-starters" role="tabpanel">
-  
-          <div class="tab-header text-center">
-            <p>Menu</p>
-            <h3>Sri Lankan Dishes</h3>
-          </div>
-  
-          <div class="row gy-5">
-  
-            <div class="col-lg-4 menu-item">
-              <a href="" class="glightbox"><img src="../assets/Photo/menuitems/Pol-Rotti-with-Pol-sambol.jpg" class="menu-img img-fluid" alt=""></a>
-              <h4>Pol Roti</h4>
-              <p class="ingredients">
-                With srilankan Traditional Chillie Paste
-              </p>
-              <p class="price">
-                80 LKR
-              </p>
-            </div><!-- Menu Item -->
-  
-            <div class="col-lg-4 menu-item">
-              <a href="" class="glightbox"><img src="../assets/Photo/menuitems/Koththu.jpg" class="menu-img img-fluid" alt=""></a>
-              <h4>Mix Koththu</h4>
-              <p class="ingredients">
-               Special with Chillie paste and Gravy
-              </p>
-              <p class="price">
-                1000 LKR
-              </p>
-            </div><!-- Menu Item -->
-  
-            <div class="col-lg-4 menu-item">
-              <a href="../assets/Photo/menuitems/Egg Hoppers.png" class="glightbox"><img src="../assets/Photo/menuitems/Egg Hoppers.png" class="menu-img img-fluid" alt=""></a>
-              <h4>Egg Hoppers</h4>
-              <p class="ingredients">
-                With Katta Sambol
-              </p>
-              <p class="price">
-                120LKR
-              </p>
-            </div><!-- Menu Item -->
-  
-            <div class="col-lg-4 menu-item">
-              <a href="../assets/Photo/menuitems/Seafood rice.png" class="glightbox"><img src="../assets/Photo/menuitems/Seafood rice.png" class="menu-img img-fluid" alt=""></a>
-              <h4>Seafood Mix Fried Rice</h4>
-              <p class="ingredients">
-                With chilliepaste and special Sauce
-              </p>
-              <p class="price">
-                1800LKR
-              </p>
-            </div><!-- Menu Item -->
-  
-            <div class="col-lg-4 menu-item">
-              <a href="../assets/Photo/menuitems/Rice-and-Curry-980x551.jpg" class="glightbox"><img src="../assets/Photo/menuitems/Rice-and-Curry-980x551.jpg" class="menu-img img-fluid" alt=""></a>
-              <h4>Rice And Curry</h4>
-              <p class="ingredients">
-                Traditional Sri Lankan Dish
-              </p>
-              <p class="price">
-                660LKR Onwards
-              </p>
-            </div><!-- Menu Item -->
-  
-            <div class="col-lg-4 menu-item">
-              <a href="../assets/Photo/menuitems/Fish.png" class="glightbox"><img src="../assets/Photo/menuitems/Fish.png" class="menu-img img-fluid" alt=""></a>
-              <h4>Special Fish Dish</h4>
-              <p class="ingredients">
-                Cooked with Special Method
-              </p>
-              <p class="price">
-                1500 LKR
-              </p>
-            </div><!-- Menu Item -->
-  
-          </div>
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Available Cars</h2>
+  <div class="row">
+    <!-- Car 1 -->
+    <div class="col-md-4">
+      <div class="card car-card mb-4">
+        <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Toyota Camry">
+        <div class="card-body">
+          <h5 class="card-title">Toyota Camry</h5>
+          <p class="card-text">Spacious and comfortable sedan with great fuel efficiency. Perfect for family trips.</p>
+          <ul class="list-unstyled">
+            <li><strong>Seats:</strong> 5</li>
+            <li><strong>Fuel Type:</strong> Gasoline</li>
+            <li><strong>Transmission:</strong> Automatic</li>
+          </ul>
+          <a href="#" class="btn btn-primary">Rent Now</a>
         </div>
-  
-  
-  <!-- End Sri Lankan Menu Content -->
-  
-  <!--Indian Menu Start -->
-  
-        <div class="tab-pane fade" id="menu-breakfast" role="tabpanel">
-  
-          <div class="tab-header text-center">
-            <p>Menu</p>
-            <h3>Indian Dishes</h3>
-          </div>
-  
-          <div class="row gy-5">
-  
-            <div class="col-lg-4 menu-item">
-              <a href="../assets/Photo/menuitems/Indian/Biriyani.jpg" class="glightbox"><img src="../assets/Photo/menuitems/Indian/Biriyani.jpg" class="menu-img img-fluid" alt=""></a>
-              <h4>Biriyani</h4>
-              <p class="ingredients">
-                Special Masala Biriyani
-              </p>
-              <p class="price">
-                1400LKR
-              </p>
-            </div><!-- Menu Item -->
-  
-            <div class="col-lg-4 menu-item">
-              <a href="../assets/Photo/menuitems/Indian/Dosa-Indian-Food-1024x768.jpg.webp" class="glightbox"><img src="../assets/Photo/menuitems/Indian/Dosa-Indian-Food-1024x768.jpg.webp" class="menu-img img-fluid" alt=""></a>
-              <h4>Ghee Dhosa</h4>
-              <p class="ingredients">
-                Traditional Indian Dhosa
-              </p>
-              <p class="price">
-                900LKR
-              </p>
-            </div><!-- Menu Item -->
-  
-            <div class="col-lg-4 menu-item">
-              <a href="../assets/Photo/menuitems/Indian/Samosa.png" class="glightbox"><img src="../assets/Photo/menuitems/Indian/Samosa.png" class="menu-img img-fluid" alt=""></a>
-              <h4>Chicken Samosa</h4>
-              <p class="ingredients">
-                Indian chicken Samosa
-              </p>
-              <p class="price">
-                250LKR
-              </p>
-            </div><!-- Menu Item -->
-  
-            <div class="col-lg-4 menu-item">
-              <a href="../assets/Photo/menuitems/Indian/Thandoori chicken.jpg" class="glightbox"><img src="../assets/Photo/menuitems/Indian/Thandoori chicken.jpg" class="menu-img img-fluid" alt=""></a>
-              <h4>Thandoori Chicken</h4>
-              <p class="ingredients">
-                Best Thandoori chicken
-              </p>
-              <p class="price">
-                2200LKR
-              </p>
-            </div><!-- Menu Item -->
-  
-            <div class="col-lg-4 menu-item">
-              <a href="../assets/Photo/menuitems/Indian/Tikka-Masala-1024x683.jpg.webp" class="glightbox"><img src="../assets/Photo/menuitems/Indian/Tikka-Masala-1024x683.jpg.webp" class="menu-img img-fluid" alt=""></a>
-              <h4>Tikka Masala</h4>
-              <p class="ingredients">
-                Special Tikka Masala
-              </p>
-              <p class="price">
-                1400LKR
-              </p>
-            </div><!-- Menu Item -->
-  
-            <div class="col-lg-4 menu-item">
-              <a href="../assets/Photo/menuitems/Indian/Naan-India-1024x683.jpg.webp" class="glightbox"><img src="../assets/Photo/menuitems/Indian/Naan-India-1024x683.jpg.webp" class="menu-img img-fluid" alt=""></a>
-              <h4>Naan</h4>
-              <p class="ingredients">
-                Special Naan
-              </p>
-              <p class="price">
-                880LKR
-              </p>
-            </div><!-- Menu Item -->
-  
-          </div>
-        </div><!-- End Indian Menu Content -->
-  
-        <!-- Start of italian Items -->
-  
-        <div class="tab-pane fade" id="menu-lunch" role="tabpanel">
-  
-          <div class="tab-header text-center">
-            <p>Menu</p>
-            <h3>Italian Dishes</h3>
-          </div>
-  
-          <div class="row gy-5">
-  
-            <div class="col-lg-4 menu-item">
-              <a href="../assets/Photo/menuitems/italian/tuscan-sausage-pasta-1200.jpg" class="glightbox"><img src="../assets/Photo/menuitems/italian/tuscan-sausage-pasta-1200.jpg" class="menu-img img-fluid" alt=""></a>
-              <h4>Special Mix Pasta</h4>
-              <p class="ingredients">
-                With real italian ingredients
-              </p>
-              <p class="price">
-                1450LKR
-              </p>
-            </div><!-- Menu Item -->
-  
-            <div class="col-lg-4 menu-item">
-              <a href="../assets/Photo/menuitems/italian/beef braciole.jpg" class="glightbox"><img src="../assets/Photo/menuitems/italian/beef braciole.jpg" class="menu-img img-fluid" alt=""></a>
-              <h4>Beef Braciole</h4>
-              <p class="ingredients">
-                With special menu
-              </p>
-              <p class="price">
-                3500LKR
-              </p>
-            </div><!-- Menu Item -->
-  
-            <div class="col-lg-4 menu-item">
-              <a href="../assets/Photo/menuitems/italian/Stuffed-Leg-of-Lamb-on-a-white-platter.jpg" class="glightbox"><img src="../assets/Photo/menuitems/italian/Stuffed-Leg-of-Lamb-on-a-white-platter.jpg" class="menu-img img-fluid" alt=""></a>
-              <h4>Stuffed Leg Of Lamb</h4>
-              <p class="ingredients">
-                Special lamb reciepie
-              </p>
-              <p class="price">
-                3200LKR
-              </p>
-            </div><!-- Menu Item -->
-  
-            <div class="col-lg-4 menu-item">
-              <a href="../assets/Photo/menuitems/italian/Skillet-Lasagna-Image-2-1024x1434.jpg" class="glightbox"><img src="../assets/Photo/menuitems/italian/Skillet-Lasagna-Image-2-1024x1434.jpg" class="menu-img img-fluid" alt=""></a>
-              <h4>Skillet Lasagna</h4>
-              <p class="ingredients">
-                Best italian lasagna
-              </p>
-              <p class="price">
-               2500LKR
-              </p>
-            </div><!-- Menu Item -->
-  
-            <div class="col-lg-4 menu-item">
-              <a href="../assets/Photo/menuitems/italian/spagatti.webp" class="glightbox"><img src="../assets/Photo/menuitems/italian/spagatti.webp" class="menu-img img-fluid" alt=""></a>
-              <h4>Spagatti</h4>
-              <p class="ingredients">
-                Spagatti with real italian reciepie
-              </p>
-              <p class="price">
-                2000LKR
-              </p>
-            </div><!-- Menu Item -->
-  
-            <div class="col-lg-4 menu-item">
-              <a href="../assets/Photo/menuitems/italian/Pizza.jpeg" class="glightbox"><img src="../assets/Photo/menuitems/italian/Pizza.jpeg" class="menu-img img-fluid" alt=""></a>
-              <h4>Pizza</h4>
-              <p class="ingredients">
-                Pizzas with different items
-              </p>
-              <p class="price">
-                1500LKR Onwards
-              </p>
-            </div><!-- Menu Item -->
-  
-          </div>
-        </div><!-- End Italian Menu Content -->
-  
-        <!-- Chinese Start -->
-  
-        <div class="tab-pane fade active show" id="menu-dinner" role="tabpanel">
-  
-          <div class="tab-header text-center">
-            <p>Menu</p>
-            <h3>Chinese Dishes</h3>
-          </div>
-  
-          <div class="row gy-5">
-  
-            <div class="col-lg-4 menu-item">
-              <a href="../assets/Photo/menuitems/chinese/Shachamian.JPG" class="glightbox"><img src="../assets/Photo/menuitems/chinese/Shachamian.JPG" class="menu-img img-fluid" alt=""></a>
-              <h4>Shacha noodles</h4>
-              <p class="ingredients">
-                Ordinary chinese reciepie
-              </p>
-              <p class="price">
-                1600LKR
-              </p>
-            </div><!-- Menu Item -->
-  
-            <div class="col-lg-4 menu-item">
-              <a href="../assets/Photo/menuitems/chinese/cuisine Prawns.jpeg" class="glightbox"><img src="../assets/Photo/menuitems/chinese/cuisine Prawns.jpeg" class="menu-img img-fluid" alt=""></a>
-              <h4>Cuisine Prawn Soup</h4>
-              <p class="ingredients">
-                Traditional chinese prawn soup
-              </p>
-              <p class="price">
-                1400LKR
-              </p>
-            </div><!-- Menu Item -->
-  
-            <div class="col-lg-4 menu-item">
-              <a href="../assets/Photo/menuitems/chinese/Chow_mein_1_by_yuen.jpg" class="glightbox"><img src="../assets/Photo/menuitems/chinese/Chow_mein_1_by_yuen.jpg" class="menu-img img-fluid" alt=""></a>
-              <h4>Chow Mein</h4>
-              <p class="ingredients">
-                Chow Mein Noodles
-              </p>
-              <p class="price">
-                1600LKR
-              </p>
-            </div><!-- Menu Item -->
-  
-            <div class="col-lg-4 menu-item">
-              <a href="../assets/Photo/menuitems/chinese/800px-Chinese_Noodle_With_Tomato_and_Egg_Sauce.jpg" class="glightbox"><img src="../assets/Photo/menuitems/chinese/800px-Chinese_Noodle_With_Tomato_and_Egg_Sauce.jpg" class="menu-img img-fluid" alt=""></a>
-              <h4>Egg and Tomato Noodle</h4>
-              <p class="ingredients">
-                Noodles with Tomato Egg Sauce
-              </p>
-              <p class="price">
-               1700LKR
-              </p>
-            </div><!-- Menu Item -->
-  
-            <div class="col-lg-4 menu-item">
-              <a href="../assets/Photo/menuitems/chinese/ziao-long-bao.jpg" class="glightbox"><img src="../assets/Photo/menuitems/chinese/ziao-long-bao.jpg" class="menu-img img-fluid" alt=""></a>
-              <h4>Ziao Long Bang </h4>
-              <p class="ingredients">
-                Traditional chinese dish
-              </p>
-              <p class="price">
-                850LKR Onwards
-              </p>
-            </div><!-- Menu Item -->
-  
-            <div class="col-lg-4 menu-item">
-              <a href="assets/img/menu/menu-item-6.png" class="glightbox"><img src="assets/img/menu/menu-item-6.png" class="menu-img img-fluid" alt=""></a>
-              <h4>Chinese Crepes</h4>
-              <p class="ingredients">
-                The breakfast Chinese street food 
-              </p>
-              <p class="price">
-                500LKR
-              </p>
-            </div><!-- Menu Item -->
-  
-          </div>
-        </div><!-- End Chuinese Menu Content -->      
       </div>
-  
     </div>
-  
-  </section>
 
+    <!-- Car 2 -->
+    <div class="col-md-4">
+      <div class="card car-card mb-4">
+        <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Honda Civic">
+        <div class="card-body">
+          <h5 class="card-title">Honda Civic</h5>
+          <p class="card-text">Compact and reliable car with excellent fuel economy, perfect for city driving.</p>
+          <ul class="list-unstyled">
+            <li><strong>Seats:</strong> 5</li>
+            <li><strong>Fuel Type:</strong> Gasoline</li>
+            <li><strong>Transmission:</strong> Automatic</li>
+          </ul>
+          <a href="#" class="btn btn-primary">Rent Now</a>
+        </div>
+      </div>
+    </div>
 
+    <!-- Car 3 -->
+    <div class="col-md-4">
+      <div class="card car-card mb-4">
+        <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="BMW X5">
+        <div class="card-body">
+          <h5 class="card-title">BMW X5</h5>
+          <p class="card-text">Luxury SUV with premium features and powerful performance. Ideal for long drives.</p>
+          <ul class="list-unstyled">
+            <li><strong>Seats:</strong> 5</li>
+            <li><strong>Fuel Type:</strong> Diesel</li>
+            <li><strong>Transmission:</strong> Automatic</li>
+          </ul>
+          <a href="#" class="btn btn-primary">Rent Now</a>
+        </div>
+      </div>
+    </div>
 
+    <!-- Car 4 -->
+    <div class="col-md-4">
+      <div class="card car-card mb-4">
+        <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Tesla Model 3">
+        <div class="card-body">
+          <h5 class="card-title">Tesla Model 3</h5>
+          <p class="card-text">All-electric sedan with advanced technology and zero emissions. Ideal for eco-conscious drivers.</p>
+          <ul class="list-unstyled">
+            <li><strong>Seats:</strong> 5</li>
+            <li><strong>Fuel Type:</strong> Electric</li>
+            <li><strong>Transmission:</strong> Automatic</li>
+          </ul>
+          <a href="#" class="btn btn-primary">Rent Now</a>
+        </div>
+      </div>
+    </div>
 
+    <!-- Car 5 -->
+    <div class="col-md-4">
+      <div class="card car-card mb-4">
+        <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Ford Mustang">
+        <div class="card-body">
+          <h5 class="card-title">Ford Mustang</h5>
+          <p class="card-text">High-performance sports car with a stylish design, perfect for thrill-seekers.</p>
+          <ul class="list-unstyled">
+            <li><strong>Seats:</strong> 4</li>
+            <li><strong>Fuel Type:</strong> Gasoline</li>
+            <li><strong>Transmission:</strong> Manual</li>
+          </ul>
+          <a href="#" class="btn btn-primary">Rent Now</a>
+        </div>
+      </div>
+    </div>
 
-
-
-
+    <!-- Car 6 -->
+    <div class="col-md-4">
+      <div class="card car-card mb-4">
+        <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Mercedes-Benz E-Class">
+        <div class="card-body">
+          <h5 class="card-title">Mercedes-Benz E-Class</h5>
+          <p class="card-text">Premium sedan with elegant design and advanced safety features, perfect for business travel.</p>
+          <ul class="list-unstyled">
+            <li><strong>Seats:</strong> 5</li>
+            <li><strong>Fuel Type:</strong> Gasoline</li>
+            <li><strong>Transmission:</strong> Automatic</li>
+          </ul>
+          <a href="#" class="btn btn-primary">Rent Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 
         <!-- Footer -->
