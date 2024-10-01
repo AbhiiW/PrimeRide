@@ -43,7 +43,7 @@
                 <li class="nav-item"><a href="FAQ.html" class="nav-link">FAQ</a></li>
                 <li class="nav-item"><a href="Pages/events.html" class="nav-link">Events</a></li>
 
-                <li class="nav-item"><a href="Contactus.html" class="nav-link">Contact Us</a></li>
+                <li class="nav-item"><a href="../Contactus.html" class="nav-link">Contact Us</a></li>
         </ul>
       </header>
     </div>
