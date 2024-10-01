@@ -20,7 +20,7 @@
           <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
             <img src="../assets/Photo/main/Ride Logo.png" class="navlogo" alt="">
           </a>
-          <h1>The Gallery Cafe</h1>
+          <h1>Prime Ride</h1>
         </div>
         <div class="d-flex align-items-center ms-auto">
           <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" id="search" role="search">

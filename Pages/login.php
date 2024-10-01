@@ -23,14 +23,14 @@
           <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
             <img src="../assets/Photo/logonew.png" class="navlogo" alt="">
           </a>
-          <h1>The Gallery Cafe</h1>
+          <h1>Prime Ride</h1>
         </div>
         <div class="d-flex align-items-center ms-auto">
           <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" id="search" role="search">
             <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..."
               aria-label="Search">
           </form>
-         
+
         </div>
       </div>
     </div>
@@ -42,7 +42,7 @@
         <ul class="nav nav-pills">
           <li class="nav-item"><a href="Dashboards/adminlogin.html" class="nav-link">Admin Login</a></li>
           <li class="nav-item"><a href="Dashboards/stafflogin.php" class="nav-link">Staff Login</a></li>
-         
+
         </ul>
       </header>
     </div>
@@ -63,17 +63,17 @@
                         <h3 class="mb-5">Sign in</h3>
 
                         <?php
-                        session_start();
-                        if (isset($_SESSION['success_message'])) {
-                            echo '<div class="alert alert-success">' . $_SESSION['success_message'] . '</div>';
-                            echo '<input type="hidden" id="redirectUrl" value="../index2.html">';
-                            unset($_SESSION['success_message']);
-                        }
-                        if (isset($_SESSION['error_message'])) {
-                            echo '<div class="alert alert-danger">' . $_SESSION['error_message'] . '</div>';
-                            unset($_SESSION['error_message']);
-                        }
-                        ?>
+session_start();
+if (isset($_SESSION['success_message'])) {
+    echo '<div class="alert alert-success">' . $_SESSION['success_message'] . '</div>';
+    echo '<input type="hidden" id="redirectUrl" value="../index2.html">';
+    unset($_SESSION['success_message']);
+}
+if (isset($_SESSION['error_message'])) {
+    echo '<div class="alert alert-danger">' . $_SESSION['error_message'] . '</div>';
+    unset($_SESSION['error_message']);
+}
+?>
 
                         <form method="POST" action="../assets/php/login.php">
                             <div data-mdb-input-init class="form-outline mb-4">

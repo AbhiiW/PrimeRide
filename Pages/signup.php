@@ -24,7 +24,7 @@
                 <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" id="search" role="search">
                     <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
                 </form>
-                
+
             </div>
         </div>
     </div>
@@ -33,7 +33,7 @@
 <div class="submenudirect-wrapper">
     <div class="container submenudirect">
         <header class="d-flex justify-content-py-5">
-          
+
         </header>
     </div>
 </div>
@@ -54,17 +54,17 @@
                                 <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
 
                                 <?php
-                                session_start();
-                                if (isset($_SESSION['success_message'])) {
-                                    echo '<div class="alert alert-success">' . $_SESSION['success_message'] . '</div>';
-                                    echo '<input type="hidden" id="redirectUrl" value="login.php">';
-                                    unset($_SESSION['success_message']);
-                                }
-                                if (isset($_SESSION['error_message'])) {
-                                    echo '<div class="alert alert-danger">' . $_SESSION['error_message'] . '</div>';
-                                    unset($_SESSION['error_message']);
-                                }
-                                ?>
+session_start();
+if (isset($_SESSION['success_message'])) {
+    echo '<div class="alert alert-success">' . $_SESSION['success_message'] . '</div>';
+    echo '<input type="hidden" id="redirectUrl" value="login.php">';
+    unset($_SESSION['success_message']);
+}
+if (isset($_SESSION['error_message'])) {
+    echo '<div class="alert alert-danger">' . $_SESSION['error_message'] . '</div>';
+    unset($_SESSION['error_message']);
+}
+?>
 
                                 <form class="mx-1 mx-md-4" method="POST" action="../assets/php/register.php">
                                     <div class="d-flex flex-row align-items-center mb-4">
@@ -135,7 +135,7 @@
               <p>St Peters Street<br>Colombo 04</p>
             </div>
           </div>
-    
+
           <div class="col-lg-3 col-md-6 d-flex align-items-start">
             <i class="bi bi-telephone icon me-3"></i>
             <div>
@@ -145,7 +145,7 @@
               </p>
             </div>
           </div>
-    
+
           <div class="col-lg-3 col-md-6 d-flex align-items-start">
             <i class="bi bi-clock icon me-3"></i>
             <div>
@@ -155,7 +155,7 @@
               </p>
             </div>
           </div>
-    
+
           <div class="col-lg-3 col-md-6">
             <h4>Follow Us</h4>
             <div class="social-links d-flex">
@@ -169,7 +169,7 @@
       </div>
       <hr class="featurette-divider">
       <div class="container text-center mt-4">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">The Gallery Cafe</strong> <span>All Rights Reserved</span></p>
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">Prime Ride</strong> <span>All Rights Reserved</span></p>
         <div class="credits">
           Designed by <a href=""></a>
         </div>

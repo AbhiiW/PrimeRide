@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
         if (password_verify($password, $row['password'])) {
-            $_SESSION['success_message'] = "Login successful. Welcome, " . $row['name'] . " to the Gallery Cafe!";
+            $_SESSION['success_message'] = "Login successful. Welcome, " . $row['name'] . " to the Prime Ride!";
             $_SESSION['login_success'] = true;
             header("Location: ../../Pages/login.php");
             exit();
