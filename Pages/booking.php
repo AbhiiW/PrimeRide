@@ -39,7 +39,7 @@
     <div class="container submenudirect">
       <header class="d-flex justify-content-py-5">
         <ul class="nav nav-pills">
-                <li class="nav-item"><a href="Index2.html" class="nav-link">Home</a></li>                             
+                <li class="nav-item"><a href="../index2.html" class="nav-link">Home</a></li>                             
                 <li class="nav-item"><a href="SelectVehicle.html" class="nav-link"></a>Offers</li>
                 <li class="nav-item"><a href="FAQ.html" class="nav-link">FAQ</a></li>
                 <li class="nav-item"><a href="Pages/events.html" class="nav-link">Events</a></li>
