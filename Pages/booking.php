@@ -20,7 +20,7 @@
       <div class="d-flex flex-wrap align-items-center justify-content-between">
         <div class="d-flex align-items-center">
           <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-            <img src="../assets/Photo/logo.png" class="navlogo" alt="">
+            <img src="../assets/Photo/main/Ride Logo.png" class="navlogo" alt="">
           </a>
           <h1>PrimeRide Car Rentals</h1>
         </div>
@@ -41,8 +41,8 @@
         <ul class="nav nav-pills">
                 <li class="nav-item"><a href="../index2.html" class="nav-link">Home</a></li>                             
                 <li class="nav-item"><a href="SelectVehicle.html" class="nav-link"></a>Offers</li>
-                <li class="nav-item"><a href="FAQ.html" class="nav-link">FAQ</a></li>
-                <li class="nav-item"><a href="Pages/events.html" class="nav-link">Events</a></li>
+                <li class="nav-item"><a href="../FAQ.html" class="nav-link">FAQ</a></li>
+                <li class="nav-item"><a href="../events.html" class="nav-link">Events</a></li>
                 <li class="nav-item"><a href="about.php" class="nav-link">About Us</a></li>
                 <li class="nav-item"><a href="Contactus.html" class="nav-link">Contact Us</a></li>
         </ul>

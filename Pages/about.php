@@ -18,7 +18,7 @@
       <div class="d-flex flex-wrap align-items-center justify-content-between">
         <div class="d-flex align-items-center">
           <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-            <img src="../assets/Photo/logonew.png" class="navlogo" alt="">
+            <img src="../assets/Photo/main/Ride Logo.png" class="navlogo" alt="">
           </a>
           <h1>The Gallery Cafe</h1>
         </div>
@@ -38,7 +38,7 @@
       <header class="d-flex justify-content-py-5">
         <ul class="nav nav-pills">
                 <li class="nav-item"><a href="../Index2.html" class="nav-link">Home</a></li>             
-                <li class="nav-item"><a href="Pages/booking.php" class="nav-link">Bookings</a></li>
+                <li class="nav-item"><a href="booking.php" class="nav-link">Bookings</a></li>
                 <li class="nav-item"><a href="SelectVehicle.html" class="nav-link"></a>Offers</li>
                 <li class="nav-item"><a href="FAQ.html" class="nav-link">FAQ</a></li>
                 <li class="nav-item"><a href="Pages/events.html" class="nav-link">Events</a></li>
@@ -73,7 +73,7 @@ Choose PrimeRide for your next trip and experience a superior level of service, 
       </div>
       <div class="overflow-hidden" style="max-height: 30vh;">
         <div class="container px-5">
-          <img src="../assets/Photo/Cafe image.jpg" class="img-fluid border rounded-3 shadow-lg mb-4"
+          <img src="" class="img-fluid border rounded-3 shadow-lg mb-4"
             alt="Example image" width="700" height="500" loading="lazy">
         </div>
       </div>
