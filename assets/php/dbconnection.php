@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "gallerydb";
+$dbname = "prime-ride";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 

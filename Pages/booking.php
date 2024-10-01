@@ -15,36 +15,44 @@
 <body>
 
   <!-- Header -->
-  <header class="p-3 text-bg-dark header">
+<header class="p-3 text-bg-brown header">
     <div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-between">
         <div class="d-flex align-items-center">
-          <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-            <img src="../assets/Photo/main/Ride Logo.png" class="navlogo" alt="">
+          <a href="" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+            <img src="../assets/Photo/main/Ride logo.png" class="navlogo" alt="">
           </a>
-          <h1>PrimeRide Car Rentals</h1>
+          <h1>Prime Ride Car Rental</h1>
         </div>
         <div class="d-flex align-items-center ms-auto">
           <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" id="search" role="search">
             <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..."
               aria-label="Search">
           </form>
-
+          <div class="text-end">
+            <a href="pages/login.php"><button type="button" class="btn btn-outline-light me-2">Login</button></a>
+            <a href="pages/signup.php"><button type="button" class="btn btn-warning">Sign-up</button></a>
+          </div>
         </div>
       </div>
     </div>
   </header>
+
   <hr class="featurette-divider">
   <div class="submenudirect-wrapper">
     <div class="container submenudirect">
       <header class="d-flex justify-content-py-5">
         <ul class="nav nav-pills">
-                <li class="nav-item"><a href="../index2.html" class="nav-link">Home</a></li>                             
-                <li class="nav-item"><a href="SelectVehicle.html" class="nav-link"></a>Offers</li>
-                <li class="nav-item"><a href="../FAQ.html" class="nav-link">FAQ</a></li>
-                <li class="nav-item"><a href="../events.html" class="nav-link">Events</a></li>
-                <li class="nav-item"><a href="about.php" class="nav-link">About Us</a></li>
-                <li class="nav-item"><a href="Contactus.html" class="nav-link">Contact Us</a></li>
+         
+          <li class="nav-item"><a href="Index2.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="SelectVehicle.html" class="nav-link">Select A Vehicle</a></li>          
+          <li class="nav-item"><a href="Pages/booking.php" class="nav-link">Bookings</a></li>
+          <li class="nav-item"><a href="../specialoffers.html" class="nav-link">Offers</a></li>
+          <li class="nav-item"><a href="events.html" class="nav-link">Events</a></li>
+          <li class="nav-item"><a href="Pages/about.php" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="Contactus.html" class="nav-link">Contact Us</a></li>
+                              
+
         </ul>
       </header>
     </div>

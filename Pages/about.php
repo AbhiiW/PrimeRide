@@ -37,12 +37,12 @@
     <div class="container submenudirect">
       <header class="d-flex justify-content-py-5">
         <ul class="nav nav-pills">
-                <li class="nav-item"><a href="../Index2.html" class="nav-link">Home</a></li>             
+                <li class="nav-item"><a href="../Index2.html" class="nav-link">Home</a></li>
                 <li class="nav-item"><a href="booking.php" class="nav-link">Bookings</a></li>
-                <li class="nav-item"><a href="SelectVehicle.html" class="nav-link"></a>Offers</li>
+                <li class="nav-item"><a href="../specialoffers.html" class="nav-link">Offers</a></li>
                 <li class="nav-item"><a href="FAQ.html" class="nav-link">FAQ</a></li>
                 <li class="nav-item"><a href="Pages/events.html" class="nav-link">Events</a></li>
-                
+
                 <li class="nav-item"><a href="Contactus.html" class="nav-link">Contact Us</a></li>
         </ul>
       </header>
@@ -90,27 +90,27 @@ Choose PrimeRide for your next trip and experience a superior level of service, 
 
     <div class="row g-0">
       <?php
-      include '../assets/php/dbconnection.php';
+include '../assets/php/dbconnection.php';
 
-      $sql = "SELECT image_path FROM gallery_images";
-      $result = $conn->query($sql);
+$sql = "SELECT image_path FROM gallery_images";
+$result = $conn->query($sql);
 
-      if ($result->num_rows > 0) {
-          while ($row = $result->fetch_assoc()) {
-              echo '<div class="col-lg-3 col-md-4">
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        echo '<div class="col-lg-3 col-md-4">
                         <div class="gallery-item">
                           <a href="../assets/Photo/' . $row["image_path"] . '" class="gallery-lightbox">
                             <img src="../assets/Photo/' . $row["image_path"] . '" alt="PrimeRide Car" class="img-fluid">
                           </a>
                         </div>
                       </div>';
-          }
-      } else {
-          echo "0 results";
-      }
+    }
+} else {
+    echo "0 results";
+}
 
-      $conn->close();
-      ?>
+$conn->close();
+?>
     </div>
   </div>
 </section>
