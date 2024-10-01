@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="../assets/css/style.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Gallery Cafe | SignUp</title>
+  <title>PrimeRide | SignUp</title>
 </head>
 <body>
 
@@ -18,7 +18,7 @@
                 <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
                     <img src="../assets/Photo/logonew.png" class="navlogo" alt="">
                 </a>
-                <h1>The Gallery Cafe</h1>
+                <h1>PrimeRide</h1>
             </div>
             <div class="d-flex align-items-center ms-auto">
                 <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" id="search" role="search">
@@ -171,7 +171,7 @@
       <div class="container text-center mt-4">
         <p>© <span>Copyright</span> <strong class="px-1 sitename">The Gallery Cafe</strong> <span>All Rights Reserved</span></p>
         <div class="credits">
-          Designed by <a href="">Abhiman Wijesekara</a>
+          Designed by <a href=""></a>
         </div>
       </div>
     </footer>

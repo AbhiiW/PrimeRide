@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="../../assets/css/style.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Gallery Cafe | Staff Login </title>
+  <title>PrimeRide| Staff Login </title>
 </head>
 <body>
   <!-- Header -->
@@ -17,7 +17,7 @@
           <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
             <img src="../../assets/Photo/logonew.png" class="navlogo" alt="">
           </a>
-          <h1>The Gallery Cafe Staff Login</h1>
+          <h1>PrimeRide Staff Login</h1>
         </div>               
       </div>
     </div>

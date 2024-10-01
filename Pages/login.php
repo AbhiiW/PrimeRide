@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="../assets/css/style.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Gallery Cafe | Login</title>
+  <title>PrimeRide | Login</title>
 </head>
 
 <body>
@@ -150,10 +150,10 @@
     </div>
     <hr class="featurette-divider">
     <div class="container text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">The Gallery Cafe</strong> <span>All Rights
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">PrimeRide</strong> <span>All Rights
           Reserved</span></p>
       <div class="credits">
-        Designed by <a href="">Abhiman Wijesekara</a>
+        Designed by <a href=""></a>
       </div>
     </div>
   </footer>
