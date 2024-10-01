@@ -4,8 +4,9 @@
 <head>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/css/style.css"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <link rel="stylesheet" href="../assets/css/style.css">
+  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PrimeRide | Booking</title>
@@ -38,10 +39,12 @@
     <div class="container submenudirect">
       <header class="d-flex justify-content-py-5">
         <ul class="nav nav-pills">
-          <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="fleet.html" class="nav-link">Our Fleet</a></li>
-          <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
-          <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+                <li class="nav-item"><a href="Index2.html" class="nav-link">Home</a></li>                             
+                <li class="nav-item"><a href="SelectVehicle.html" class="nav-link"></a>Offers</li>
+                <li class="nav-item"><a href="FAQ.html" class="nav-link">FAQ</a></li>
+                <li class="nav-item"><a href="Pages/events.html" class="nav-link">Events</a></li>
+                <li class="nav-item"><a href="about.php" class="nav-link">About Us</a></li>
+                <li class="nav-item"><a href="Contactus.html" class="nav-link">Contact Us</a></li>
         </ul>
       </header>
     </div>
@@ -107,56 +110,59 @@
   </div>
 
   <!-- Footer -->
-  <footer id="footer" class="footer dark-background">
-    <div class="container">
-      <div class="row gy-3">
-        <div class="col-lg-3 col-md-6 d-flex align-items-start">
-          <i class="bi bi-geo-alt icon me-3"></i>
-          <div class="address">
-            <h4>Address</h4>
-            <p>123 Main Street<br>Colombo 04</p>
-          </div>
+<footer id="footer" class="footer dark-background">
+  <div class="container">
+    <div class="row gy-3">
+      <div class="col-lg-3 col-md-6 d-flex align-items-start">
+        <i class="bi bi-geo-alt icon me-3"></i>
+        <div class="address">
+          <h4>Address</h4>
+          <p>Kurunegala Road<br>Katugasthota, Kandy</p>
         </div>
+      </div>
 
-        <div class="col-lg-3 col-md-6 d-flex align-items-start">
-          <i class="bi bi-telephone icon me-3"></i>
-          <div>
-            <h4>Contact</h4>
-            <p><strong>Phone:</strong> <span>+94112587968</span><br>
-              <strong>Email:</strong> <span>prideride@gmail.com</span>
-            </p>
-          </div>
+      <div class="col-lg-3 col-md-6 d-flex align-items-start">
+        <i class="bi bi-telephone icon me-3"></i>
+        <div>
+          <h4>Contact</h4>
+          <p><strong>Phone:</strong> <span>(077) 766 3798</span><br>
+            <strong>Email:</strong> <span>primeride@gmail.com</span>
+          </p>
         </div>
+      </div>
 
-        <div class="col-lg-3 col-md-6 d-flex align-items-start">
-          <i class="bi bi-clock icon me-3"></i>
-          <div>
-            <h4>Operating Hours</h4>
-            <p><strong>Mon-Sat:</strong> <span>09.00 AM - 10.00 PM</span><br>
-              <strong>Sunday:</strong> <span>Closed</span>
-            </p>
-          </div>
+      <div class="col-lg-3 col-md-6 d-flex align-items-start">
+        <i class="bi bi-clock icon me-3"></i>
+        <div>
+          <h4>Opening Hours</h4>
+          <p><strong>Mon-Sat:</strong> <span>09.00 AM - 11.00 PM</span><br>
+            <strong>Sunday:</strong> <span>Closed</span>
+          </p>
         </div>
+      </div>
 
-        <div class="col-lg-3 col-md-6">
-          <h4>Follow Us</h4>
-          <div class="social-links d-flex">
-            <a href="#" class="twitter"><i class="bi bi-twitter me-2"></i></a>
-            <a href="#" class="facebook"><i class="bi bi-facebook me-2"></i></a>
-            <a href="#" class="instagram"><i class="bi bi-instagram me-2"></i></a>
-            <a href="#" class="linkedin"><i class="bi bi-linkedin me-2"></i></a>
-          </div>
+      <div class="col-lg-3 col-md-6">
+        <h4>Follow Us</h4>
+        <div class="social-links d-flex">
+          <a href="#" class="twitter"><i class="bi bi-twitter me-2"></i></a>
+          <a href="#" class="facebook"><i class="bi bi-facebook me-2"></i></a>
+          <a href="#" class="instagram"><i class="bi bi-instagram me-2"></i></a>
+          <a href="#" class="linkedin"><i class="bi bi-linkedin me-2"></i></a>
         </div>
       </div>
     </div>
-    <hr class="featurette-divider">
-    <div class="container text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">PrimeRide</strong> <span>All Rights Reserved</span></p>
-      <div class="credits">
-        Designed by <a href=""></a>
-      </div>
+  </div>
+  <hr class="featurette-divider">
+  <div class="container text-center mt-4">
+    <p>© <span>Copyright</span> <strong class="px-1 sitename">PrimeRide</strong> <span>All Rights Reserved</span></p>
+    <div class="credits">
+      Designed by <a href=""></a>
     </div>
-  </footer>
+  </div>
+</footer>
+
+
+
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
