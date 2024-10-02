@@ -16,14 +16,12 @@
         <div class="d-flex flex-wrap align-items-center justify-content-between">
             <div class="d-flex align-items-center">
                 <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-                    <img src="../assets/Photo/logonew.png" class="navlogo" alt="">
+                    <img src="../assets/Photo/main/Ride logo.png" class="navlogo" alt="">
                 </a>
                 <h1>PrimeRide</h1>
             </div>
             <div class="d-flex align-items-center ms-auto">
-                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" id="search" role="search">
-                    <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
-                </form>
+               
 
             </div>
         </div>
@@ -113,7 +111,7 @@ if (isset($_SESSION['error_message'])) {
 
                             </div>
                             <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
-                                <img src="../assets/photo/signupposter.png" class="img-fluid" alt="Sample image">
+                                <img src="../assets/Photo/main/car.jpg" class="img-fluid" alt="Sample image">
                             </div>
                         </div>
                     </div>
@@ -124,59 +122,62 @@ if (isset($_SESSION['error_message'])) {
 </section>
 
 
-  <!-- Footer -->
-  <footer id="footer" class="footer dark-background">
-      <div class="container">
-        <div class="row gy-3">
-          <div class="col-lg-3 col-md-6 d-flex align-items-start">
-            <i class="bi bi-geo-alt icon me-3"></i>
-            <div class="address">
-              <h4>Address</h4>
-              <p>St Peters Street<br>Colombo 04</p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-start">
-            <i class="bi bi-telephone icon me-3"></i>
-            <div>
-              <h4>Contact</h4>
-              <p><strong>Phone:</strong> <span>+94112587968</span><br>
-                 <strong>Email:</strong> <span>thegallerycafe@gmail.com</span>
-              </p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-start">
-            <i class="bi bi-clock icon me-3"></i>
-            <div>
-              <h4>Opening Hours</h4>
-              <p><strong>Mon-Sat:</strong> <span>09.00 AM - 11.00 PM</span><br>
-                 <strong>Sunday:</strong> <span>Closed</span>
-              </p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <h4>Follow Us</h4>
-            <div class="social-links d-flex">
-              <a href="#" class="twitter"><i class="bi bi-twitter me-2"></i></a>
-              <a href="#" class="facebook"><i class="bi bi-facebook me-2"></i></a>
-              <a href="#" class="instagram"><i class="bi bi-instagram me-2"></i></a>
-              <a href="#" class="linkedin"><i class="bi bi-linkedin me-2"></i></a>
-            </div>
-          </div>
+ <!-- Footer -->
+<footer id="footer" class="footer dark-background">
+  <div class="container">
+    <div class="row gy-3">
+      <div class="col-lg-3 col-md-6 d-flex align-items-start">
+        <i class="bi bi-geo-alt icon me-3"></i>
+        <div class="address">
+          <h4>Address</h4>
+          <p>Kurunegala Road<br>Katugasthota, Kandy</p>
         </div>
       </div>
-      <hr class="featurette-divider">
-      <div class="container text-center mt-4">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">Prime Ride</strong> <span>All Rights Reserved</span></p>
-        <div class="credits">
-          Designed by <a href=""></a>
+
+      <div class="col-lg-3 col-md-6 d-flex align-items-start">
+        <i class="bi bi-telephone icon me-3"></i>
+        <div>
+          <h4>Contact</h4>
+          <p><strong>Phone:</strong> <span>(077) 766 3798</span><br>
+            <strong>Email:</strong> <span>primeride@gmail.com</span>
+          </p>
         </div>
       </div>
-    </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  <script src="../assets/js/redirect.js"></script>
+      <div class="col-lg-3 col-md-6 d-flex align-items-start">
+        <i class="bi bi-clock icon me-3"></i>
+        <div>
+          <h4>Opening Hours</h4>
+          <p><strong>Mon-Sat:</strong> <span>09.00 AM - 11.00 PM</span><br>
+            <strong>Sunday:</strong> <span>Closed</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6">
+        <h4>Follow Us</h4>
+        <div class="social-links d-flex">
+          <a href="#" class="twitter"><i class="bi bi-twitter me-2"></i></a>
+          <a href="#" class="facebook"><i class="bi bi-facebook me-2"></i></a>
+          <a href="#" class="instagram"><i class="bi bi-instagram me-2"></i></a>
+          <a href="#" class="linkedin"><i class="bi bi-linkedin me-2"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr class="featurette-divider">
+  <div class="container text-center mt-4">
+    <p>© <span>Copyright</span> <strong class="px-1 sitename">PrimeRide</strong> <span>All Rights Reserved</span></p>
+    <div class="credits">
+      Designed by <a href=""></a>
+    </div>
+  </div>
+</footer>
+
+  <script src="assets/js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
 </body>
+
 </html>

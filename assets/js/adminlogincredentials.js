@@ -18,7 +18,7 @@ function login() {
         
         setTimeout(function() {
             window.location.href = "admindashboard.php";
-        }, 5000);
+        }, 2000);
 
     } else {
        

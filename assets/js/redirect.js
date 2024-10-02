@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (redirectUrl) {
         setTimeout(function() {
             window.location.href = redirectUrl.value;
-        }, 5000);
+        }, 2000);
     }
 });
 
