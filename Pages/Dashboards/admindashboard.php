@@ -18,7 +18,7 @@
       <div class="d-flex flex-wrap align-items-center justify-content-between">
         <div class="d-flex align-items-center">
           <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-            <img src="../../assets/Photo/logonew.png" class="navlogo" alt="">
+            <img src="../../assets/Photo/main/Ride logo.png" class="navlogo" alt="">
           </a>
           <h1>PrimeRide Admin Dashboard</h1>
         </div>
