@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'dbconnection.php';
+include '../dbconnection.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST['name'];

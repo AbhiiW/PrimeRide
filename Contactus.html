@@ -135,153 +135,74 @@
               Got questions or concerns? Don’t hesitate to contact us for
               reliable car rental services.
             </p>
-            <form>
+
+            <form action="assets/php/UserFunctions/submit_message.php" method="POST" onsubmit="return validateForm()">
               <div class="row mb-3">
-                <div class="col-md-6">
-                  <label for="subject" class="form-label"
-                    >Subject <span class="text-danger">*</span></label
-                  >
-                  <select id="subject" class="form-select" required>
-                    <option value="">Please Select...</option>
-                    <option value="General Inquiry">General Inquiry</option>
-                    <option value="Booking Issue">Booking Issue</option>
-                    <option value="Feedback">Feedback</option>
-                  </select>
-                </div>
-                <div class="col-md-6">
-                  <label for="rentalType" class="form-label"
-                    >Rental Type <span class="text-danger">*</span></label
-                  >
-                  <select id="rentalType" class="form-select" required>
-                    <option value="">Please Select...</option>
-                    <option value="Short-term">Short-term</option>
-                    <option value="Long-term">Long-term</option>
-                    <option value="Luxury">Luxury</option>
-                  </select>
-                </div>
+                  <div class="col-md-6">
+                      <label for="subject" class="form-label">Subject <span class="text-danger">*</span></label>
+                      <select id="subject" name="subject" class="form-select" required>
+                          <option value="">Please Select...</option>
+                          <option value="General Inquiry">General Inquiry</option>
+                          <option value="Booking Issue">Booking Issue</option>
+                          <option value="Feedback">Feedback</option>
+                      </select>
+                  </div>
+                  <div class="col-md-6">
+                      <label for="rentalType" class="form-label">Rental Type <span class="text-danger">*</span></label>
+                      <select id="rentalType" name="rental_type" class="form-select" required>
+                          <option value="">Please Select...</option>
+                          <option value="Short-term">Short-term</option>
+                          <option value="Long-term">Long-term</option>
+                          <option value="Luxury">Luxury</option>
+                      </select>
+                  </div>
               </div>
               <div class="row mb-3">
-                <div class="col-md-6">
-                  <label for="firstName" class="form-label"
-                    >First Name <span class="text-danger">*</span></label
-                  >
-                  <input
-                    type="text"
-                    id="firstName"
-                    class="form-control"
-                    required
-                    placeholder="John"
-                  />
-                </div>
-                <div class="col-md-6">
-                  <label for="lastName" class="form-label"
-                    >Last Name <span class="text-danger">*</span></label
-                  >
-                  <input
-                    type="text"
-                    id="lastName"
-                    class="form-control"
-                    required
-                    placeholder="Doe"
-                  />
-                </div>
+                  <div class="col-md-6">
+                      <label for="firstName" class="form-label">First Name <span class="text-danger">*</span></label>
+                      <input type="text" id="firstName" name="first_name" class="form-control" required placeholder="John" />
+                  </div>
+                  <div class="col-md-6">
+                      <label for="lastName" class="form-label">Last Name <span class="text-danger">*</span></label>
+                      <input type="text" id="lastName" name="last_name" class="form-control" required placeholder="Doe" />
+                  </div>
               </div>
               <div class="mb-3">
-                <label for="mobileNumber" class="form-label"
-                  >Mobile Number <span class="text-danger">*</span></label
-                >
-                <input
-                  type="tel"
-                  id="mobileNumber"
-                  class="form-control"
-                  required
-                  placeholder="+94123456789"
-                />
+                  <label for="mobileNumber" class="form-label">Mobile Number <span class="text-danger">*</span></label>
+                  <input type="tel" id="mobileNumber" name="mobile_number" class="form-control" required placeholder="+94123456789" />
               </div>
               <div class="mb-3">
-                <label for="emailAddress" class="form-label"
-                  >Email Address <span class="text-danger">*</span></label
-                >
-                <input
-                  type="email"
-                  id="emailAddress"
-                  class="form-control"
-                  required
-                  placeholder="john.doe@example.com"
-                />
+                  <label for="emailAddress" class="form-label">Email Address <span class="text-danger">*</span></label>
+                  <input type="email" id="emailAddress" name="email_address" class="form-control" required placeholder="john.doe@example.com" />
               </div>
               <div class="mb-3">
-                <label for="carType" class="form-label">Car Types</label>
-                <select id="carType" class="form-select" multiple>
-                  <option value="Sedan">Sedan</option>
-                  <option value="SUV">SUV</option>
-                  <option value="Luxury">Luxury</option>
-                </select>
+                  <label for="dateRange" class="form-label">Date Range <span class="text-danger">*</span></label>
+                  <input type="text" id="dateRange" name="date_range" class="form-control" required placeholder="Select date range" onfocus="(this.type='date')" onblur="(this.type='text')" />
               </div>
               <div class="mb-3">
-                <label for="dateRange" class="form-label">Date Range</label>
-                <input
-                  type="text"
-                  id="dateRange"
-                  class="form-control"
-                  placeholder="Select date range"
-                />
-              </div>
-              <div class="mb-3">
-                <label for="message" class="form-label"
-                  >Your Message/Questions
-                  <span class="text-danger">*</span></label
-                >
-                <textarea
-                  id="message"
-                  class="form-control"
-                  rows="4"
-                  required
-                ></textarea>
+                  <label for="message" class="form-label">Your Message/Questions <span class="text-danger">*</span></label>
+                  <textarea id="message" name="message" class="form-control" rows="4" required></textarea>
               </div>
               <div class="mb-3 form-check">
-                <input
-                  type="checkbox"
-                  class="form-check-input"
-                  id="privacyPolicy"
-                />
-                <label class="form-check-label" for="privacyPolicy"
-                  >I consent to Privacy Policy and opt-in for marketing
-                  communications.</label
-                >
-              </div>
-              <div class="mb-3">
-                <label for="captcha" class="form-label"
-                  >Enter the characters
-                  <span class="text-danger">*</span></label
-                >
-                <div class="row">
-                  <div class="col-md-4">
-                    <input
-                      type="text"
-                      id="captchaImage"
-                      class="form-control"
-                      disabled
-                      value="FP9BK"
-                    />
-                  </div>
-                  <div class="col-md-8">
-                    <input
-                      type="text"
-                      id="captcha"
-                      class="form-control"
-                      placeholder="Enter captcha"
-                      required
-                    />
-                  </div>
-                </div>
+                  <input type="checkbox" class="form-check-input" id="privacyPolicy" name="privacy_policy" required />
+                  <label class="form-check-label" for="privacyPolicy">I consent to Privacy Policy and opt-in for marketing communications.</label>
               </div>
               <div class="text-center">
-                <button type="submit" class="btn submit-btn btn-lg">
-                  Submit
-                </button>
+                  <button type="submit" class="btn submit-btn btn-lg">Submit</button>
               </div>
-            </form>
+          </form>
+          
+          <script>
+          function validateForm() {
+              const privacyPolicy = document.getElementById('privacyPolicy');
+              if (!privacyPolicy.checked) {
+                  alert('You must consent to the Privacy Policy before submitting.');
+                  return false;
+              }
+              return true;
+          }
+          </script>
+          
           </div>
         </div>
 
