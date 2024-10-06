@@ -2,35 +2,27 @@
 session_start();
 include '../dbconnection.php';
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+$username = $_POST['username'];
+$password = $_POST['password'];
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+$stmt = $conn->prepare("SELECT * FROM clients WHERE username = ?");
+$stmt->bind_param("s", $username);
+$stmt->execute();
+$result = $stmt->get_result();
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-
-    $sql = "SELECT * FROM users WHERE email = '$email'";
-    $result = $conn->query($sql);
-
-    if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        if (password_verify($password, $row['password'])) {
-            $_SESSION['success_message'] = "Login successful. Welcome, " . $row['name'] . "to the Gallery Cafe!!";
-            $_SESSION['login_success'] = true;
-            header("Location: ../../Pages/login.php");
-            exit();
-        } else {
-            $_SESSION['error_message'] = "Invalid password.";
-        }
+if ($result->num_rows === 1) {
+    $user = $result->fetch_assoc();
+    if (password_verify($password, $user['password'])) {
+        $_SESSION['username'] = $user['username'];
+        $_SESSION['name'] = $user['name'];
+        setcookie('username', $user['username'], time() + (86400 * 30), "/");
+        header('Location: ../../../profile.php');
     } else {
-        $_SESSION['error_message'] = "No user found with this email.";
+        $_SESSION['error'] = 'Invalid username or password.';
+        header('Location: ../../../authentication.php');
     }
+} else {
+    $_SESSION['error'] = 'Invalid username or password.';
+    header('Location: ../../../authentication.php');
 }
-
-$conn->close();
-header("Location: ../../Pages/login.php");
-exit();
 ?>

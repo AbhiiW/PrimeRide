@@ -1,3 +1,49 @@
+<?php
+session_start();
+
+include 'assets/php/dbconnection.php'; 
+
+if (!isset($_SESSION['username']) && !isset($_COOKIE['username'])) {
+    
+    header('Location: authentication.php');
+    exit();
+}
+
+$username = isset($_SESSION['username']) ? $_SESSION['username'] : $_COOKIE['username'];
+
+if (!$username) {
+    echo "No username found in session or cookies.";
+    exit();
+}
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$stmt = $conn->prepare("SELECT name, profile_picture FROM clients WHERE username = ?");
+if (!$stmt) {
+    die("Prepare failed: " . $conn->error);
+}
+
+$stmt->bind_param("s", $username);
+$stmt->execute();
+$result = $stmt->get_result();
+
+$user = $result->fetch_assoc();
+
+$name = $user['name'];
+$profile_picture = !empty($user['profile_picture']) ? $user['profile_picture'] : 'default.jpg';
+
+$hour = date('H');
+if ($hour < 12) {
+    $greeting = "Good Morning";
+} elseif ($hour < 18) {
+    $greeting = "Good Afternoon";
+} else {
+    $greeting = "Good Evening";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,6 +76,13 @@
                 </a>
                 <h1>PrimeRide</h1>
             </div>
+            <!-- Greeting Message -->
+            <div class="greeting">
+                <h3 class="text-white"><?php echo $greeting . ', ' . htmlspecialchars($name); ?>!</h3>
+            </div>
+            <div>
+                <a href="assets/php/UserFunctions/logout.php" class="btn btn-danger">Logout</a>
+            </div>
         </div>
     </div>
 </header>
@@ -40,7 +93,7 @@
             <div class="col-md-3">
                 <!-- Profile Picture -->
                 <div class="text-center">
-                    <img src="assets/Photo/Profilepictures/<?php echo $profile_picture; ?>" class="profile-picture mb-3" alt="Profile Picture">
+                    <img src="assets/database/user-profiles-pic/<?php echo htmlspecialchars($profile_picture); ?>" class="profile-picture mb-3" alt="Profile Picture">
                     <!-- Profile Picture Update Form -->
                     <form action="assets/php/update_profile_picture.php" method="POST" enctype="multipart/form-data">
                         <label for="profilePicUpload" class="form-label">Update Profile Picture</label>
@@ -130,52 +183,7 @@
 </div>
 
 <!-- Footer -->
-<footer id="footer" class="footer dark-background">
-    <div class="container">
-        <div class="row gy-3">
-            <div class="col-lg-3 col-md-6 d-flex align-items-start">
-                <i class="bi bi-geo-alt icon me-3"></i>
-                <div class="address">
-                    <h4>Address</h4>
-                    <p>St Peters Street<br>Colombo 04</p>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 d-flex align-items-start">
-                <i class="bi bi-telephone icon me-3"></i>
-                <div>
-                    <h4>Contact</h4>
-                    <p><strong>Phone:</strong> +94112587968<br><strong>Email:</strong> thegallerycafe@gmail.com</p>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 d-flex align-items-start">
-                <i class="bi bi-clock icon me-3"></i>
-                <div>
-                    <h4>Opening Hours</h4>
-                    <p><strong>Mon-Sat:</strong> 09.00 AM - 11.00 PM<br><strong>Sunday:</strong> Closed</p>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6">
-                <h4>Follow Us</h4>
-                <div class="social-links d-flex">
-                    <a href="#" class="twitter"><i class="bi bi-twitter me-2"></i></a>
-                    <a href="#" class="facebook"><i class="bi bi-facebook me-2"></i></a>
-                    <a href="#" class="instagram"><i class="bi bi-instagram me-2"></i></a>
-                    <a href="#" class="linkedin"><i class="bi bi-linkedin me-2"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <hr class="featurette-divider">
-    <div class="container text-center mt-4">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">PrimeRide</strong> <span>All Rights Reserved</span></p>
-        <div class="credits">
-            Designed by <a href=""></a>
-        </div>
-    </div>
-</footer>
+<?php include 'footer.php'; ?>
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>

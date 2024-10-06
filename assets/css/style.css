@@ -11,21 +11,21 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 1000; /* Ensure the header is on top */
 }
 
-.formst{
-margin-top: 150px;
-
+.formst {
+  margin-top: 300px; /* Adjusted to ensure the form appears below both the header and submenu */
 }
+
 .header a,
 .header form,
 .header button {
   transition: all 0.3s ease;
 }
 
-.featureddishes{
-margin-bottom: 80px;
+.featureddishes {
+  margin-bottom: 80px;
 }
 
 .header a:hover {
@@ -65,14 +65,21 @@ margin-bottom: 80px;
 }
 
 /* Submenu Styles */
+.navbar-wrapper {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000; /* Same z-index as header to make them on the same layer */
+}
+
 .submenudirect-wrapper {
   background-color: #f8f9fa;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 10px 0;
   position: fixed;
-  top: 90px;
+  top: 70px; /* Positioned below the header */
   width: 100%;
-  z-index: 999;
+  z-index: 999; /* Below the header but above other content */
 }
 
 .submenudirect {
@@ -107,8 +114,6 @@ margin-bottom: 80px;
 .submenudirect .nav-pills .nav-link.active {
   font-weight: bold;
 }
-
-
 
 .carousel-item img {
   margin-top: 90px;
