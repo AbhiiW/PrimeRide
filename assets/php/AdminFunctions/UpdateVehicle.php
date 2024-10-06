@@ -9,8 +9,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $fuel_type = $_POST['fuel_type'];
     $transmission = $_POST['transmission'];
     $license_plate = $_POST['license_plate'];
+    $price_perday = $_POST['price_perday']; 
 
-   
+    
     $sql = "SELECT image_path FROM vehicles WHERE id = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("i", $id);
@@ -19,45 +20,42 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->fetch();
     $stmt->close();
 
-    
     if ($_FILES['image_path']['error'] === UPLOAD_ERR_OK) {
-    
         $target_dir = "../../Photo/Vehicleimg/";
         $old_image_path = $target_dir . $current_image_path;
-        
+
         if (file_exists($old_image_path)) {
-            unlink($old_image_path); // Delete the old image file 
+            unlink($old_image_path); 
         }
 
-        
         $image_path = $_FILES['image_path']['name'];
         $target_file = $target_dir . basename($image_path);
         move_uploaded_file($_FILES['image_path']['tmp_name'], $target_file);
 
-        // Update the database with the new image path
-        $sql = "UPDATE vehicles SET vehicle_name = ?, model = ?, seats = ?, fuel_type = ?, transmission = ?, license_plate = ?, image_path = ? WHERE id = ?";
+        
+        $sql = "UPDATE vehicles SET vehicle_name = ?, model = ?, seats = ?, fuel_type = ?, transmission = ?, license_plate = ?, image_path = ?, price_perday = ? WHERE id = ?";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("ssiisssi", $vehicle_name, $model, $seats, $fuel_type, $transmission, $license_plate, $image_path, $id);
+        $stmt->bind_param("ssiissssi", $vehicle_name, $model, $seats, $fuel_type, $transmission, $license_plate, $image_path, $price_perday, $id);
     } else {
-        // If no new image is uploaded, just update the other details
-        $sql = "UPDATE vehicles SET vehicle_name = ?, model = ?, seats = ?, fuel_type = ?, transmission = ?, license_plate = ? WHERE id = ?";
+        
+        $sql = "UPDATE vehicles SET vehicle_name = ?, model = ?, seats = ?, fuel_type = ?, transmission = ?, license_plate = ?, price_perday = ? WHERE id = ?";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("ssiissi", $vehicle_name, $model, $seats, $fuel_type, $transmission, $license_plate, $id);
+        $stmt->bind_param("ssiisssi", $vehicle_name, $model, $seats, $fuel_type, $transmission, $license_plate, $price_perday, $id);
     }
 
-    
     if ($stmt->execute()) {
         
-        //  success message 
+        echo "Vehicle updated successfully.";
     } else {
-        // Error Handling
+        
+        echo "Error updating vehicle: " . $stmt->error;
     }
 
-    // Clean up
+   
     $stmt->close();
     $conn->close();
 
-    // Redirect back to the vehicle management page
+  
     header("Location:../../../admin/vehiclemanagement.php");
     exit();
 }

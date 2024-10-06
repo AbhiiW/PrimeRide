@@ -60,13 +60,14 @@
     </button>
   </div>
 
-  <!-- Available Cars Section -->
-  <div class="container mt-5">
+<!-- Available Cars Section -->
+<div class="container mt-5">
     <h2 class="text-center mb-4">Available Cars</h2>
     <div class="row">
 
       <?php
-      $sql = "SELECT vehicle_name, model, seats, fuel_type, transmission, image_path FROM vehicles";
+      // Update SQL query to include price_perday
+      $sql = "SELECT vehicle_name, model, seats, fuel_type, transmission, image_path, price_perday FROM vehicles";
       $result = $conn->query($sql);
 
       if ($result->num_rows > 0) {
@@ -84,6 +85,7 @@
                               <li><strong>Seats:</strong> <?php echo $row['seats']; ?></li>
                               <li><strong>Fuel Type:</strong> <?php echo $row['fuel_type']; ?></li>
                               <li><strong>Transmission:</strong> <?php echo $row['transmission']; ?></li>
+                              <li><strong>Price per Day:</strong> LKR <?php echo number_format($row['price_perday'], 2); ?></li> 
                           </ul>
                           <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#rentModal"
                             onclick="setModalData('<?php echo $row['vehicle_name']; ?>', '<?php echo $row['model']; ?>')">
@@ -101,7 +103,8 @@
       $conn->close();
       ?>
     </div>
-  </div>
+</div>
+
 
 <!-- Rent Modal -->
 <div class="modal fade" id="rentModal" tabindex="-1" aria-labelledby="rentModalLabel" aria-hidden="true">

@@ -72,8 +72,8 @@ include '../assets/php/dbconnection.php';
     <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addVehicleModal">Add New Vehicle</button>
     <div class="row mt-4">
         <?php
-        // Fetch vehicles from the database
-        $sql = "SELECT id, vehicle_name, model, seats, fuel_type, transmission, license_plate, image_path FROM vehicles";
+        // Fetch vehicles from the database, including price_perday
+        $sql = "SELECT id, vehicle_name, model, seats, fuel_type, transmission, license_plate, image_path, price_perday FROM vehicles";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
@@ -91,6 +91,7 @@ include '../assets/php/dbconnection.php';
                                 <li><strong>Fuel Type:</strong> <?php echo $row['fuel_type']; ?></li>
                                 <li><strong>Transmission:</strong> <?php echo $row['transmission']; ?></li>
                                 <li><strong>License Plate:</strong> <?php echo $row['license_plate']; ?></li>
+                                <li><strong>Price per Day:</strong> LKR <?php echo number_format($row['price_perday'], 2); ?></li> 
                             </ul>
                             <form action="../assets/php/AdminFunctions/DeleteVehicle.php" method="POST" class="d-inline">
                                 <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
@@ -113,6 +114,7 @@ include '../assets/php/dbconnection.php';
         ?>
     </div>
 </div>
+
 
 <!-- Add Vehicle Modal -->
 <div class="modal fade" id="addVehicleModal" tabindex="-1" aria-labelledby="addVehicleModalLabel" aria-hidden="true">
@@ -149,6 +151,10 @@ include '../assets/php/dbconnection.php';
                         <input type="text" class="form-control" id="licensePlate" name="license_plate" required>
                     </div>
                     <div class="mb-3">
+                        <label for="pricePerDay" class="form-label">Price per Day (LKR)</label>
+                        <input type="number" step="0.01" class="form-control" id="pricePerDay" name="price_perday" required>
+                    </div>
+                    <div class="mb-3">
                         <label for="imagePath" class="form-label">Vehicle Image</label>
                         <input type="file" class="form-control" id="imagePath" name="image_path" accept="image/*" required>
                     </div>
@@ -161,6 +167,7 @@ include '../assets/php/dbconnection.php';
         </div>
     </div>
 </div>
+
 
 <!-- Update Vehicle Modal -->
 <div class="modal fade" id="updateVehicleModal" tabindex="-1" aria-labelledby="updateVehicleModalLabel" aria-hidden="true">
@@ -198,6 +205,10 @@ include '../assets/php/dbconnection.php';
                         <input type="text" class="form-control" id="update_license_plate" name="license_plate" required>
                     </div>
                     <div class="mb-3">
+                        <label for="update_price_perday" class="form-label">Price per Day (LKR)</label>
+                        <input type="number" step="0.01" class="form-control" id="update_price_perday" name="price_perday" required>
+                    </div>
+                    <div class="mb-3">
                         <label for="update_image_path" class="form-label">Vehicle Image</label>
                         <input type="file" class="form-control" id="update_image_path" name="image_path" accept="image/*">
                     </div>
@@ -221,6 +232,7 @@ include '../assets/php/dbconnection.php';
         document.getElementById('update_fuel_type').value = vehicle.fuel_type;
         document.getElementById('update_transmission').value = vehicle.transmission;
         document.getElementById('update_license_plate').value = vehicle.license_plate;
+        document.getElementById('update_price_perday').value = vehicle.price_perday; // Add this line
     }
 </script>
 
