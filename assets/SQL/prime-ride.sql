@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 06, 2024 at 08:51 PM
+-- Generation Time: Oct 06, 2024 at 11:42 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -123,21 +123,22 @@ INSERT INTO `offers` (`id`, `title`, `description`, `price`, `original_price`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `rentals`
+-- Table structure for table `rental`
 --
 
-CREATE TABLE `rentals` (
+CREATE TABLE `rental` (
   `id` int(11) NOT NULL,
-  `rental_id` varchar(255) NOT NULL,
+  `rental_id` int(11) NOT NULL,
   `vehicle_name` varchar(255) NOT NULL,
-  `plate_number` varchar(255) NOT NULL,
+  `plate_number` varchar(50) NOT NULL,
   `model` varchar(255) NOT NULL,
   `customer_username` varchar(255) NOT NULL,
   `customer_email` varchar(255) NOT NULL,
   `rental_duration` int(11) NOT NULL,
   `pickup_date` date NOT NULL,
   `dropoff_date` date NOT NULL,
-  `rental_status` enum('Out','Payment Pending','Available','Service','Processing') NOT NULL DEFAULT 'Available',
+  `rental_status` varchar(50) NOT NULL,
+  `receipt_url` varchar(255) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -175,6 +176,7 @@ CREATE TABLE `vehicles` (
   `fuel_type` varchar(50) NOT NULL,
   `transmission` varchar(50) NOT NULL,
   `license_plate` varchar(20) NOT NULL,
+  `price_perday` decimal(10,2) NOT NULL,
   `image_path` varchar(255) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -183,8 +185,8 @@ CREATE TABLE `vehicles` (
 -- Dumping data for table `vehicles`
 --
 
-INSERT INTO `vehicles` (`id`, `vehicle_name`, `model`, `seats`, `fuel_type`, `transmission`, `license_plate`, `image_path`, `created_at`) VALUES
-(2, 'Honda Civic', '2021', 5, 'Diesel', 'Manual', 'XYZ5678', 'toyota_camry.jpg', '2024-10-06 13:50:39');
+INSERT INTO `vehicles` (`id`, `vehicle_name`, `model`, `seats`, `fuel_type`, `transmission`, `license_plate`, `price_perday`, `image_path`, `created_at`) VALUES
+(16, 'Toyota Prius', '2024', 4, '0', 'Auto', 'XYZ5678', 3000.00, '1-f7da73c3.png', '2024-10-06 19:19:52');
 
 --
 -- Indexes for dumped tables
@@ -217,9 +219,9 @@ ALTER TABLE `offers`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `rentals`
+-- Indexes for table `rental`
 --
-ALTER TABLE `rentals`
+ALTER TABLE `rental`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -264,10 +266,10 @@ ALTER TABLE `offers`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `rentals`
+-- AUTO_INCREMENT for table `rental`
 --
-ALTER TABLE `rentals`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `rental`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `staff`
@@ -279,7 +281,7 @@ ALTER TABLE `staff`
 -- AUTO_INCREMENT for table `vehicles`
 --
 ALTER TABLE `vehicles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
