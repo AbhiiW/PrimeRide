@@ -87,6 +87,8 @@ if ($hour < 12) {
     </div>
 </header>
 
+<?php include 'navigation.php'; ?>
+
 <div class="cprofile">
     <div class="container mt-5">
         <div class="row">
@@ -116,76 +118,136 @@ if ($hour < 12) {
                 <button type="submit" class="btn btn-success">Save Changes</button>
                 </form>
                 <hr>
+                
+            <!-- Rentals -->
+  <!-- Rentals -->
+<?php
 
-                <!-- Placed Orders Section -->
-                <h4>Placed Orders</h4>
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th>Order ID</th>
-                            <th>Date</th>
-                            <th>Status</th>
-                            <th>Total Amount</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>#1234</td>
-                            <td>2024-10-01</td>
-                            <td>Completed</td>
-                            <td>$120</td>
-                        </tr>
-                        <tr>
-                            <td>#1235</td>
-                            <td>2024-10-02</td>
-                            <td>Pending</td>
-                            <td>$75</td>
-                        </tr>
-                    </tbody>
-                </table>
+include('assets/php/dbconnection.php');
 
-                <hr>
+// Fetch rental data from the database
+$sql = "SELECT rental_id, pickup_date, rental_status, rental_duration FROM rental";
+$result = $conn->query($sql);
+?>
 
-                <!-- Messages Section -->
-                <h4>Messages</h4>
-                <div class="accordion" id="messageAccordion">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingOne">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                Message #1: Issue with Order #1234
-                            </button>
-                        </h2>
-                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#messageAccordion">
-                            <div class="accordion-body">
-                                <p><strong>Your Message:</strong> I have an issue with my order delivery.</p>
-                                <p><strong>Reply:</strong> We are looking into this and will get back to you shortly.</p>
-                            </div>
+<div class="content">
+    <h4>Placed Rentals</h4>
+    <div class="row">
+        <?php
+        if ($result->num_rows > 0) {
+            while ($rental = $result->fetch_assoc()) {
+                echo '
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Rental ID: #' . $rental['rental_id'] . '</h5>
+                            <p class="card-text"><strong>Pickup Date:</strong> ' . $rental['pickup_date'] . '</p>
+                            <p class="card-text"><strong>Status:</strong> ' . $rental['rental_status'] . '</p>
+                            <p class="card-text"><strong>Rental Duration (days):</strong> ' . $rental['rental_duration'] . '</p>
+                            <button class="btn btn-danger delete-btn" data-rentalid="' . $rental['rental_id'] . '">Delete Rental</button>
+                            <button class="btn btn-info mt-2 update-btn" data-rentalid="' . $rental['rental_id'] . '" data-toggle="modal" data-target="#paymentModal">Update Payment</button>
                         </div>
                     </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingTwo">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                Message #2: Payment not processed
-                            </button>
-                        </h2>
-                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#messageAccordion">
-                            <div class="accordion-body">
-                                <p><strong>Your Message:</strong> My payment was not processed properly for order #1235.</p>
-                                <p><strong>Reply:</strong> Please try again or contact customer service for assistance.</p>
-                            </div>
-                        </div>
-                    </div>
+                </div>';
+            }
+        } else {
+            echo "<p>No rentals found.</p>";
+        }
+
+        // Close the connection
+        $conn->close();
+        ?>
+    </div>
+
+    <!-- Payment Modal -->
+    <div class="modal fade" id="paymentModal" tabindex="-1" role="dialog" aria-labelledby="paymentModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="paymentModalLabel">Upload Payment Receipt</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
+                <div class="modal-body">
+                    <form action="assets/php/UserFunctions/Upload_reciept.php" method="post" enctype="multipart/form-data">
+                        <input type="hidden" id="rental_id" name="rental_id">
+                        <div class="form-group">
+                            <label for="receipt">Select Payment Receipt (Photo format only):</label>
+                            <input type="file" class="form-control-file" id="receipt" name="receipt" accept="image/*" required>
+                        </div>
+                        <small class="text-muted">Please upload your payment receipt in photo format (JPEG, PNG).</small>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Submit Receipt</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
+<script>
+// When Update Payment button is clicked, populate the rental ID in the modal
+document.querySelectorAll('.update-btn').forEach(button => {
+    button.addEventListener('click', function() {
+        const rentalId = this.getAttribute('data-rentalid');
+        document.getElementById('rental_id').value = rentalId;
+    });
+});
+
+// Delete button handler
+document.querySelectorAll('.delete-btn').forEach(button => {
+    button.addEventListener('click', function() {
+        const rentalId = this.getAttribute('data-rentalid');
+        if (confirm('Are you sure you want to delete this rental?')) {
+            window.location.href = `assets/php/UserFunctions/Delete_rental.php?rental_id=${rentalId}`;
+        }
+    });
+});
+</script>
+
+
+<!-- Messages Section -->
+<h4>Messages</h4>
+<div class="accordion" id="messageAccordion">
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Message #1: Issue with Order #1234
+            </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#messageAccordion">
+            <div class="accordion-body">
+                <p><strong>Your Message:</strong> I have an issue with my order delivery.</p>
+                <p><strong>Reply:</strong> We are looking into this and will get back to you shortly.</p>
+            </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Message #2: Payment not processed
+            </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#messageAccordion">
+            <div class="accordion-body">
+                <p><strong>Your Message:</strong> My payment was not processed properly for order #1235.</p>
+                <p><strong>Reply:</strong> Please try again or contact customer service for assistance.</p>
             </div>
         </div>
     </div>
 </div>
 
+
 <!-- Footer -->
 <?php include 'footer.php'; ?>
 
 <!-- Bootstrap JS -->
+ <!-- Include jQuery and Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -59,15 +59,15 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
-
-<!-- Available Cars Section -->
+  
+  <!-- Available cars -->
 <div class="container mt-5">
     <h2 class="text-center mb-4">Available Cars</h2>
     <div class="row">
 
       <?php
-      // Update SQL query to include price_perday
-      $sql = "SELECT vehicle_name, model, seats, fuel_type, transmission, image_path, price_perday FROM vehicles";
+      
+      $sql = "SELECT vehicle_name, model, seats, fuel_type, transmission, image_path, price_perday, license_plate FROM vehicles";
       $result = $conn->query($sql);
 
       if ($result->num_rows > 0) {
@@ -88,7 +88,7 @@
                               <li><strong>Price per Day:</strong> LKR <?php echo number_format($row['price_perday'], 2); ?></li> 
                           </ul>
                           <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#rentModal"
-                            onclick="setModalData('<?php echo $row['vehicle_name']; ?>', '<?php echo $row['model']; ?>')">
+                            onclick="setModalData('<?php echo $row['vehicle_name']; ?>', '<?php echo $row['model']; ?>', '<?php echo $row['license_plate']; ?>')">
                             Rent Now
                           </a>
                       </div>
@@ -105,7 +105,6 @@
     </div>
 </div>
 
-
 <!-- Rent Modal -->
 <div class="modal fade" id="rentModal" tabindex="-1" aria-labelledby="rentModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -118,14 +117,18 @@
         <form action="assets/php/userFunctions/submit_rent.php" method="POST">
           <input type="hidden" name="vehicle_name" id="modalVehicleName">
           <input type="hidden" name="model" id="modalModel">
+          <input type="hidden" name="plate_number" id="modalPlateNumber"> <!-- Hidden field for plate number -->
+
           <div class="mb-3">
             <label for="customer_username" class="form-label">Username</label>
-            <input type="text" class="form-control" name="customer_name" required>
+            <input type="text" class="form-control" name="customer_username" id="customer_username" value="<?php echo isset($_SESSION['username']) ? $_SESSION['username'] : ''; ?>" readonly>
           </div>
+          
           <div class="mb-3">
             <label for="customer_email" class="form-label">Email</label>
-            <input type="email" class="form-control" name="customer_email" required>
+            <input type="email" class="form-control" name="customer_email" id="customer_email" placeholder="Enter your email" required>
           </div>
+          
           <div class="mb-3">
             <label for="contact_number" class="form-label">Contact Number</label>
             <input type="tel" class="form-control" name="contact_number" required>
@@ -150,6 +153,14 @@
     </div>
   </div>
 </div>
+
+<script>
+function setModalData(vehicleName, model, plateNumber) {
+    document.getElementById('modalVehicleName').value = vehicleName;
+    document.getElementById('modalModel').value = model;
+    document.getElementById('modalPlateNumber').value = plateNumber; // Set the plate number
+}
+</script>
 
 
   <!-- Footer -->
