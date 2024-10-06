@@ -1,30 +1,31 @@
 <?php
-include 'dbconnection.php';
+include '../dbconnection.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $vehicle_name = $_POST['vehicleName'];
-    $model = $_POST['vehicleModel'];
+    $vehicle_name = $_POST['vehicle_name'];
+    $model = $_POST['model'];
     $seats = $_POST['seats'];
-    $fuel_type = $_POST['fuelType'];
+    $fuel_type = $_POST['fuel_type'];
     $transmission = $_POST['transmission'];
-    $license_plate = $_POST['licensePlate'];
-    $target_dir = "../assets/vehicles/";
-    
-    // File upload logic
-    $target_file = $target_dir . basename($_FILES["vehicleImage"]["name"]);
-    move_uploaded_file($_FILES["vehicleImage"]["tmp_name"], $target_file);
+    $license_plate = $_POST['license_plate'];
 
-    // Insert into database
-    $sql = "INSERT INTO vehicles (vehicle_name, model, seats, fuel_type, transmission, license_plate, image_path)
-            VALUES ('$vehicle_name', '$model', '$seats', '$fuel_type', '$transmission', '$license_plate', '$target_file')";
+    $image_path = $_FILES['image_path']['name'];
+    $target_dir = "../../Photo/Vehicleimg/";
+    $target_file = $target_dir . basename($image_path);
 
-    if ($conn->query($sql) === TRUE) {
-        $_SESSION['message'] = "Vehicle added successfully";
-    } else {
-        $_SESSION['message'] = "Error: " . $conn->error;
-    }
+    move_uploaded_file($_FILES['image_path']['tmp_name'], $target_file);
 
+    $sql = "INSERT INTO vehicles (vehicle_name, model, seats, fuel_type, transmission, license_plate, image_path) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("ssiisss", $vehicle_name, $model, $seats, $fuel_type, $transmission, $license_plate, $image_path);
+
+    $stmt->execute();
+
+    $stmt->close();
     $conn->close();
-    header("Location:../../../../Pages/Dashboards/admindashboard.php");
+
+    // Redirect back to the vehicle management page
+    header("Location:../../../admin/vehiclemanagement.php");
+    exit();
 }
 ?>

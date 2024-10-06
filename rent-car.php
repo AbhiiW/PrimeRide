@@ -103,46 +103,51 @@
     </div>
   </div>
 
-  <!-- Rent Modal -->
-  <div class="modal fade" id="rentModal" tabindex="-1" aria-labelledby="rentModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="rentModalLabel">Rent Vehicle</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <form action="assets/php/userFunctions/submit_rent.php" method="POST">
-            <input type="hidden" name="vehicle_name" id="modalVehicleName">
-            <input type="hidden" name="model" id="modalModel">
-            <div class="mb-3">
-              <label for="customer_name" class="form-label">Your Name</label>
-              <input type="text" class="form-control" name="customer_name" required>
-            </div>
-            <div class="mb-3">
-              <label for="customer_email" class="form-label">Your Email</label>
-              <input type="email" class="form-control" name="customer_email" required>
-            </div>
-            <div class="mb-3">
-              <label for="rental_duration" class="form-label">Rental Duration (days)</label>
-              <input type="number" class="form-control" name="rental_duration" required>
-            </div>
-            <div class="mb-3">
-              <label for="pickup_date" class="form-label">Pickup Date</label>
-              <input type="date" class="form-control" name="pickup_date" required>
-            </div>
-            <div class="mb-3">
-              <label for="dropoff_date" class="form-label">Drop-off Date</label>
-              <input type="date" class="form-control" name="dropoff_date" required>
-            </div>
-            <div class="text-center">
-              <button type="submit" class="btn btn-primary">Submit Rent Request</button>
-            </div>
-          </form>
-        </div>
+<!-- Rent Modal -->
+<div class="modal fade" id="rentModal" tabindex="-1" aria-labelledby="rentModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="rentModalLabel">Rent Vehicle</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="assets/php/userFunctions/submit_rent.php" method="POST">
+          <input type="hidden" name="vehicle_name" id="modalVehicleName">
+          <input type="hidden" name="model" id="modalModel">
+          <div class="mb-3">
+            <label for="customer_username" class="form-label">Username</label>
+            <input type="text" class="form-control" name="customer_name" required>
+          </div>
+          <div class="mb-3">
+            <label for="customer_email" class="form-label">Email</label>
+            <input type="email" class="form-control" name="customer_email" required>
+          </div>
+          <div class="mb-3">
+            <label for="contact_number" class="form-label">Contact Number</label>
+            <input type="tel" class="form-control" name="contact_number" required>
+          </div>
+          <div class="mb-3">
+            <label for="rental_duration" class="form-label">Rental Duration (days)</label>
+            <input type="number" class="form-control" name="rental_duration" required>
+          </div>
+          <div class="mb-3">
+            <label for="pickup_date" class="form-label">Pickup Date</label>
+            <input type="date" class="form-control" name="pickup_date" required>
+          </div>
+          <div class="mb-3">
+            <label for="dropoff_date" class="form-label">Drop-off Date</label>
+            <input type="date" class="form-control" name="dropoff_date" required>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary">Submit Rent Request</button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
+</div>
+
 
   <!-- Footer -->
   <?php include 'footer.php'; ?>

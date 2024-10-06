@@ -1,11 +1,11 @@
 <?php
-include '../dbconnection.php';
+include '../dbconnection.php'; 
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $id = $_POST['id'];
 
-  
-    $sql = "SELECT image_path FROM vehicles WHERE id = ?";
+    
+    $sql = "SELECT image_path FROM gallery WHERE id = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("i", $id);
     $stmt->execute();
@@ -16,31 +16,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bind_result($image_path);
         $stmt->fetch();
         
-        
-        $sql = "DELETE FROM vehicles WHERE id = ?";
+       
+        $sql = "DELETE FROM gallery WHERE id = ?";
         $stmt->close();
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("i", $id);
         
         if ($stmt->execute()) {
-            
-            $target_file = "../../Photo/Vehicleimg/" . $image_path;
+           
+            $target_file = "../../Photo/Galleryimg/" . $image_path;
             if (file_exists($target_file)) {
                 unlink($target_file); 
             }
-          
+           
         } else {
-            echo "Error deleting vehicle: " . $stmt->error;
+            echo "Error deleting photo: " . $stmt->error;
         }
     } else {
-        echo "Vehicle not found.";
+        echo "Photo not found.";
     }
 
     $stmt->close();
     $conn->close();
-    
- 
-    header("Location: ../../../admin/vehiclemanagement.php");
+
+   
+    header("Location: ../../../admin/gallerymanagement.php"); 
     exit();
 }
 ?>
+

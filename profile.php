@@ -95,7 +95,7 @@ if ($hour < 12) {
                 <div class="text-center">
                     <img src="assets/database/user-profiles-pic/<?php echo htmlspecialchars($profile_picture); ?>" class="profile-picture mb-3" alt="Profile Picture">
                     <!-- Profile Picture Update Form -->
-                    <form action="assets/php/update_profile_picture.php" method="POST" enctype="multipart/form-data">
+                    <form action="assets/php/UserFunctions/update_profile_picture.php" method="POST" enctype="multipart/form-data">
                         <label for="profilePicUpload" class="form-label">Update Profile Picture</label>
                         <input class="form-control" type="file" id="profilePicUpload" name="profilePicUpload" required>
                         <button type="submit" class="btn btn-primary mt-2">Update</button>

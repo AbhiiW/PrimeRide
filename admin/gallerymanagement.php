@@ -9,6 +9,7 @@
   <style>
     body {
       font-family: Arial, sans-serif;
+      margin-top: 100px;
     }
     .sidebar {
       width: 250px;
@@ -34,7 +35,6 @@
   </style>
 </head>
 <body>
-
   <header class="p-3 text-bg-brown header">
     <div class="container">
         <div class="d-flex flex-wrap align-items-center justify-content-between">
@@ -50,8 +50,8 @@
     </div>
 </header>
   
-   <!-- Sidebar -->
-   <div class="sidebar">
+  <!-- Sidebar -->
+  <div class="sidebar">
     <a href="vehiclemanagement.html">Vehicle Management</a>
     <a href="bookingmanagement.html">Booking Management</a>
     <a href="staffmanagement.html">Staff Management</a>
@@ -62,36 +62,58 @@
   </div>
 
   <!-- Main Content Area -->
+
+  <?php
+
+include '../assets/php/dbconnection.php';
+
+
+?>
+<div class="content">
+  <h2>Gallery Management</h2>
   
-  <div class="content">
-    <h2>Payment Management</h2>
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>Payment ID</th>
-          <th>Customer</th>
-          <th>Amount</th>
-          <th>Status</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>4321</td>
-          <td>Jane Smith</td>
-          <td>$500</td>
-          <td>
-            <select class="form-select">
-              <option value="pending">Pending</option>
-              <option value="approved">Approved</option>
-              <option value="rejected">Rejected</option>
-            </select>
-          </td>
-          <td><button class="btn btn-success">Submit</button></td>
-        </tr>
-      </tbody>
-    </table>
+  <!-- Form for uploading images -->
+  <form action="../assets/php/AdminFunctions/Update_gallery.php" method="POST" enctype="multipart/form-data">
+    <div class="mb-3">
+      <label for="image" class="form-label">Choose an Image</label>
+      <input type="file" class="form-control" name="image" id="image" required>
+    </div>
+    <button type="submit" class="btn btn-success">Upload to the gallery</button>
+  </form>
+  <div class="row mt-4">
+    <?php
+    // Fetch items from the gallery
+    $sql = "SELECT id, title, image_path FROM gallery";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+      while ($row = $result->fetch_assoc()) {
+        ?>
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="../assets/Photo/Galleryimg/<?php echo $row['image_path']; ?>" class="card-img-top" alt="<?php echo $row['title']; ?>">
+            <div class="card-body">
+              <h5 class="card-title"><?php echo $row['title']; ?></h5>
+              <form action="../assets/php/AdminFunctions/Delete_gallery_item.php" method="POST">
+                <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                <button type="submit" class="btn btn-danger">Delete</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <?php
+      }
+    } else {
+      echo "<p class='text-center'>Gallery Still Updating</p>";
+    }
+
+    // Close the database connection
+    $conn->close();
+    ?>
   </div>
+</div>
+
+  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

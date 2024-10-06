@@ -35,7 +35,8 @@ $is_logged_in = isset($_SESSION['username']) || isset($_COOKIE['username']);
 <div class="submenudirect-wrapper">
     <div class="container submenudirect">
         <header class="d-flex justify-content-py-5">
-            <ul class="nav nav-pills">         
+            <ul class="nav nav-pills">
+                <li class="nav-item"><a href="index.php" class="nav-link">Home</a></li>        
                 <li class="nav-item"><a href="rent-car.php" class="nav-link">Select A Vehicle</a></li>
                 <li class="nav-item"><a href="Specialoffers.php" class="nav-link">Offers</a></li>
                 <li class="nav-item"><a href="FAQ.php" class="nav-link">FAQ</a></li>

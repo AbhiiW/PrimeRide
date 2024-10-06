@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['profilePicUpload']))
             if ($stmt->execute()) {
                 $_SESSION['success_message'] = "Profile picture updated successfully.";
                 // Redirect to the profile page
-                header("Location: ../../profile.php");
+                header("Location: ../../../profile.php");
                 exit();
             } else {
                 $_SESSION['error_message'] = "Error updating profile picture in the database.";
@@ -69,11 +69,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['profilePicUpload']))
     }
 
     // Redirect back to the profile page in case of any error
-    header("Location: ../../profile.php");
+    header("Location: ../../../profile.php");
     exit();
 } else {
     $_SESSION['error_message'] = "Invalid request.";
-    header("Location: ../../profile.php");
+    header("Location: ../../../profile.php");
     exit();
 }
 

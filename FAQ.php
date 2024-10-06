@@ -22,12 +22,12 @@
     }
 
     .accordion-button:not(.collapsed) {
-      background-color: #C40404;
+      background-color: #d4002a;
       color: white;
     }
 
     .accordion-button {
-      border: 1px solid #C40404;
+      border: 1px solid #d4002a;
     }
 
     .accordion-button:focus {
@@ -45,22 +45,6 @@
   <!-- Header -->
   <?php include 'navigation.php'; ?>
 
-  <hr class="featurette-divider">
-  <div class="submenudirect-wrapper">
-    <div class="container submenudirect">
-      <header class="d-flex justify-content-py-5">
-        <ul class="nav nav-pills">
-          <li class="nav-item"><a href="Index2.html" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="SelectVehicle.html" class="nav-link">Select A Vehicle</a></li>
-          <li class="nav-item"><a href="Pages/booking.php" class="nav-link">Bookings</a></li>
-          <li class="nav-item"><a href="specialoffers.html" class="nav-link">Offers</a></li>
-          <li class="nav-item"><a href="events.html" class="nav-link">Events</a></li>
-          <li class="nav-item"><a href="Pages/about.php" class="nav-link">About</a></li>
-          <li class="nav-item"><a href="Contactus.html" class="nav-link">Contact Us</a></li>
-        </ul>
-      </header>
-    </div>
-  </div>
 
   <!-- FAQ Header Section -->
   <div class="faq-header">
