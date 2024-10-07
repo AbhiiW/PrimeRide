@@ -1,149 +1,293 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="../../assets/css/style.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PrimeRide | Staff Dashboard</title>
+<style>
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+/* Dashboard Main Section */
+.container h1 {
+    color: #343a40;
+    margin-bottom: 30px;
+}
+
+/* Table Styles */
+.table {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table thead th {
+    background-color: #343a40;
+    color: white;
+}
+
+.table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Buttons */
+.btn {
+    border-radius: 25px;
+    font-size: 14px;
+    padding: 8px 12px;
+}
+
+.btn-success {
+    background-color: #28a745;
+    border: none;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border: none;
+}
+
+/* Modal Styles */
+.modal-header {
+    background-color: #343a40;
+    color: white;
+}
+
+.modal-content {
+    border-radius: 8px;
+}
+
+/* Gallery Management */
+.content {
+    margin-top: 30px;
+}
+
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.card img {
+    height: 250px;
+    object-fit: cover;
+}
+
+.card-title {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.btn-danger {
+    font-size: 12px;
+}
+
+</style>
+
+
+
+
 </head>
+
 <body>
   <!-- Header -->
   <header class="p-3 text-bg-dark header">
     <div class="container">
-        <div class="d-flex flex-wrap align-items-center justify-content-between">
-            <div class="d-flex align-items-center">
-                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-                    <img src="../../assets/Photo/primelogo.png" class="navlogo" alt="PrimeRide Logo">
-                </a>
-                <h1>PrimeRide Staff Dashboard</h1>
-            </div>               
+      <div class="d-flex flex-wrap align-items-center justify-content-between">
+        <div class="d-flex align-items-center">
+          <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+            <img src="../../assets/Photo/primelogo.png" class="navlogo" alt="PrimeRide Logo">
+          </a>
+          <h1>PrimeRide Staff Dashboard</h1>
         </div>
+      </div>
     </div>
   </header>
 
   <!-- Dashboard -->
   <div class="container my-5">
     <h1 class="text-center">Staff Dashboard</h1>
-    <div class="row">
-      <!-- Login Section -->
-      <div class="col-md-6 mb-4">
-        <h2>Login</h2>
-        <form action="../../assets/php/staff_login.php" method="post">
-          <div class="mb-3">
-            <label for="staffEmail" class="form-label">Email</label>
-            <input type="email" class="form-control" id="staffEmail" name="staffEmail" required>
-          </div>
-          <div class="mb-3">
-            <label for="staffPassword" class="form-label">Password</label>
-            <input type="password" class="form-control" id="staffPassword" name="staffPassword" required>
-          </div>
-          <button type="submit" class="btn btn-primary">Login</button>
-        </form>
-      </div>
 
-      <!-- Vehicle Check-In/Check-Out -->
-      <div class="col-md-6 mb-4">
-        <h2>Vehicle Check-In/Check-Out</h2>
-        <form action="../../assets/php/vehicle_checkin_checkout.php" method="post">
-          <div class="mb-3">
-            <label for="vehicleID" class="form-label">Vehicle ID</label>
-            <input type="text" class="form-control" id="vehicleID" name="vehicleID" required>
-          </div>
-          <div class="mb-3">
-            <label for="checkInOut" class="form-label">Check-In or Check-Out</label>
-            <select class="form-select" id="checkInOut" name="checkInOut" required>
-              <option value="Check-In">Check-In</option>
-              <option value="Check-Out">Check-Out</option>
-            </select>
-          </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-      </div>
+    <!-- Bookings -->
+<?php
+include '../assets/php/dbconnection.php'; 
+?>
+<div class="content">
+    <h2>Booking Management</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Rental ID</th>
+          <th>Customer</th>
+          <th>Vehicle</th>
+          <th>Plate Number</th>
+          <th>Model</th>
+          <th>Duration (days)</th>
+          <th>Pickup Date</th>
+          <th>Dropoff Date</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php
+        // Fetch rental data
+        $sql = "SELECT rental_id, customer_username, vehicle_name, plate_number, model, rental_duration, 
+                pickup_date, dropoff_date, rental_status, receipt_url FROM rental"; 
+        $result = $conn->query($sql);
 
-      <!-- Maintenance Scheduling -->
-      <div class="col-md-6 mb-4">
-        <h2>Maintenance Scheduling</h2>
-        <form action="../../assets/php/schedule_maintenance.php" method="post">
-          <div class="mb-3">
-            <label for="vehicleIDMaintenance" class="form-label">Vehicle ID</label>
-            <input type="text" class="form-control" id="vehicleIDMaintenance" name="vehicleIDMaintenance" required>
-          </div>
-          <div class="mb-3">
-            <label for="maintenanceDate" class="form-label">Scheduled Date</label>
-            <input type="date" class="form-control" id="maintenanceDate" name="maintenanceDate" required>
-          </div>
-          <button type="submit" class="btn btn-primary">Schedule</button>
-        </form>
-      </div>
+        if ($result->num_rows > 0) {
+            // Output each row
+            while($row = $result->fetch_assoc()) {
+                // Construct the receipt URL
+                $receiptUrl = "../assets/Photo/paymentreciepts/{$row['receipt_url']}";
 
-      <!-- Booking Management -->
-      <div class="col-md-6 mb-4">
-        <h2>Booking Management</h2>
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th>Booking ID</th>
-              <th>Client Name</th>
-              <th>Vehicle ID</th>
-              <th>Booking Date</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            <?php
-            include '../../assets/php/dbconnection.php';
-            $sql = "SELECT booking_id, client_name, vehicle_id, booking_date, status FROM bookings";
-            $result = $conn->query($sql);
-
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                    echo "<tr><td>" . $row["booking_id"]. "</td><td>" . $row["client_name"]. "</td><td>" . $row["vehicle_id"]. "</td><td>" . $row["booking_date"]. "</td><td>" . $row["status"]. "</td></tr>";
-                }
-            } else {
-                echo "<tr><td colspan='5' class='text-center'>No bookings found</td></tr>";
+                echo "<tr>
+                        <td>{$row['rental_id']}</td>
+                        <td>{$row['customer_username']}</td>
+                        <td>{$row['vehicle_name']}</td>
+                        <td>{$row['plate_number']}</td>
+                        <td>{$row['model']}</td>
+                        <td>{$row['rental_duration']}</td>
+                        <td>{$row['pickup_date']}</td>
+                        <td>{$row['dropoff_date']}</td>
+                        <td>
+                            <form method='post' action='../assets/php/AdminFunctions/ViewRentals.php'>
+                                <input type='hidden' name='rental_id' value='{$row['rental_id']}'>
+                                <select class='form-select' name='rental_status'>
+                                    <option value='Available' " . ($row['rental_status'] == 'Available' ? 'selected' : '') . ">Available</option>
+                                    <option value='Out' " . ($row['rental_status'] == 'Out' ? 'selected' : '') . ">Out</option>
+                                    <option value='Payment pending' " . ($row['rental_status'] == 'Payment pending' ? 'selected' : '') . ">Payment pending</option>
+                                    <option value='Processing' " . ($row['rental_status'] == 'Processing' ? 'selected' : '') . ">Processing</option>
+                                    <option value='In service' " . ($row['rental_status'] == 'In service' ? 'selected' : '') . ">In service</option>
+                                    <option value='Approved' " . ($row['rental_status'] == 'Approved' ? 'selected' : '') . ">Approved</option> <!-- New option added -->
+                                </select>
+                        </td>
+                        <td>
+                            <button class='btn btn-success' type='submit'>Update Status</button>
+                            </form>
+                        </td>
+                        <td>
+                            <button class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#receiptModal' onclick='showReceipt(\"$receiptUrl\")'>View Receipt</button>
+                            <form method='post' action='../assets/php/AdminFunctions/DeleteRental.php' style='display:inline;'>
+                                <input type='hidden' name='rental_id' value='{$row['rental_id']}'>
+                                <button class='btn btn-danger' type='submit' onclick='return confirm(\"Are you sure you want to delete this booking?\");'>Delete</button>
+                            </form>
+                        </td>
+                      </tr>";
             }
-            $conn->close();
-            ?>
-          </tbody>
-        </table>
-      </div>
+        } else {
+            echo "<tr><td colspan='10'>No bookings found</td></tr>";
+        }
 
-      <!-- Notification System -->
-      <div class="col-md-6 mb-4">
-        <h2>Notification System</h2>
-        <p>Notify staff of pending tasks and updates via email or SMS.</p>
-        <form action="../../assets/php/notify.php" method="post">
-          <div class="mb-3">
-            <label for="notificationMessage" class="form-label">Message</label>
-            <textarea class="form-control" id="notificationMessage" name="notificationMessage" rows="3" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary">Send Notification</button>
-        </form>
-      </div>
+        $conn->close();
+        ?>
+      </tbody>
+    </table>
+</div>
 
-      <!-- Contact Client -->
-      <div class="col-md-6 mb-4">
-        <h2>Contact Client</h2>
-        <form action="../../assets/php/contact_client.php" method="post">
-          <div class="mb-3">
-            <label for="clientEmail" class="form-label">Client Email</label>
-            <input type="email" class="form-control" id="clientEmail" name="clientEmail" required>
-          </div>
-          <div class="mb-3">
-            <label for="messageToClient" class="form-label">Message</label>
-            <textarea class="form-control" id="messageToClient" name="messageToClient" rows="3" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary">Send Message</button>
-        </form>
-      </div>
-
+<div class="modal fade" id="receiptModal" tabindex="-1" aria-labelledby="receiptModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="receiptModalLabel">Payment Receipt</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="receiptContent">
+                <p id="receiptMessage">Loading receipt...</p>
+            </div>
+        </div>
     </div>
-  </div>
+</div>
 
-   <!-- Footer -->
-   <footer id="footer" class="footer dark-background">
+<script>
+function showReceipt(receiptUrl) {
+    var receiptContent = document.getElementById("receiptContent");
+    var receiptMessage = document.getElementById("receiptMessage");
+
+    if (receiptUrl) {
+        // If URL exists, display it
+        receiptContent.innerHTML = "<iframe src='" + receiptUrl + "' style='width: 100%; height: 500px;' frameborder='0'></iframe>";
+    } else {
+        // If no URL, show an error message
+        receiptContent.innerHTML = "";
+        receiptMessage.innerHTML = "Error: Receipt does not exist.";
+    }
+}
+</script>
+
+
+
+    <!-- Update Gallery Section -->
+  
+    <?php
+
+include '../assets/php/dbconnection.php';
+
+
+?>
+<div class="content">
+  <h2>Gallery Management</h2>
+  
+  <!-- Form for uploading images -->
+  <form action="../assets/php/AdminFunctions/Update_gallery.php" method="POST" enctype="multipart/form-data">
+    <div class="mb-3">
+      <label for="image" class="form-label">Choose an Image</label>
+      <input type="file" class="form-control" name="image" id="image" required>
+    </div>
+    <button type="submit" class="btn btn-success">Upload to the gallery</button>
+  </form>
+  <div class="row mt-4">
+    <?php
+    // Fetch items from the gallery
+    $sql = "SELECT id, title, image_path FROM gallery";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+      while ($row = $result->fetch_assoc()) {
+        ?>
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="../assets/Photo/Galleryimg/<?php echo $row['image_path']; ?>" class="card-img-top" alt="<?php echo $row['title']; ?>">
+            <div class="card-body">
+              <h5 class="card-title"><?php echo $row['title']; ?></h5>
+              <form action="../assets/php/AdminFunctions/Delete_gallery_item.php" method="POST">
+                <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                <button type="submit" class="btn btn-danger">Delete</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <?php
+      }
+    } else {
+      echo "<p class='text-center'>Gallery Still Updating</p>";
+    }
+
+    // Close the database connection
+    $conn->close();
+    ?>
+  </div>
+</div>
+
+
+  <!-- Footer -->
+  <footer id="footer" class="footer dark-background">
     <div class="container">
       <div class="row gy-3">
         <!-- Footer details -->

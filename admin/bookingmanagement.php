@@ -4,35 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Car Rental Admin Dashboard</title>
-  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="admin.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin-top:100px;
-    }
-    .sidebar {
-      width: 250px;
-      position: fixed;
-      height: 100%;
-      background-color: #343a40;
-      color: #fff;
-      padding-top: 20px;
-    }
-    .sidebar a {
-      padding: 15px;
-      text-decoration: none;
-      color: #fff;
-      display: block;
-    }
-    .sidebar a:hover {
-      background-color: #495057;
-    }
-    .content {
-      margin-left: 250px;
-      padding: 20px;
-    }
-  </style>
+  link
 </head>
 <body>
 
@@ -51,15 +25,13 @@
     </div>
 </header>
   
-  <!-- Sidebar -->
-  <div class="sidebar">
-    <a href="vehiclemanagement.html">Vehicle Management</a>
-    <a href="bookingmanagement.html">Booking Management</a>
-    <a href="staffmanagement.html">Staff Management</a>
-    <a href="gallerymanagement.html">Gallery Management</a>
-    <a href="customermessages.html">Customer Messages</a>
-    <a href="promotions.html">Promotions</a>
-    <a href="customer-reviews.html">Customer Reviews</a>
+ <!-- Sidebar -->
+ <div class="sidebar">
+    <a href="vehiclemanagement.php">Vehicle Management</a>
+    <a href="bookingmanagement.php">Booking Management</a>
+    <a href="staffmanagement.php">Staff Management</a>
+    <a href="gallerymanagement.php">Gallery Management</a>
+    <a href="promotions.php">Promotions</a>
   </div>
 
   <!-- Main Content Area -->
@@ -170,7 +142,9 @@ function showReceipt(receiptUrl) {
     }
 }
 </script>
-
+<footer>
+    <p>&copy; 2024 Prime Ride. All Rights Reserved.</p>
+</footer>
 
   
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
