@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 
 include 'assets/php/dbconnection.php'; 
@@ -86,8 +87,21 @@ if ($hour < 12) {
         </div>
     </div>
 </header>
-
-<?php include 'navigation.php'; ?>
+<hr class="featurette-divider">
+<div class="submenudirect-wrapper">
+    <div class="container submenudirect">
+        <header class="d-flex justify-content-py-5">
+            <ul class="nav nav-pills">
+                <li class="nav-item"><a href="index.php" class="nav-link">Home</a></li>        
+                <li class="nav-item"><a href="rent-car.php" class="nav-link">Select A Vehicle</a></li>
+                <li class="nav-item"><a href="Specialoffers.php" class="nav-link">Offers</a></li>
+                <li class="nav-item"><a href="FAQ.php" class="nav-link">FAQ</a></li>
+                <li class="nav-item"><a href="Aboutus.php" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="Contactus.php" class="nav-link">Contact Us</a></li>
+            </ul>
+        </header>
+    </div>
+</div>
 
 <div class="cprofile">
     <div class="container mt-5">
@@ -123,10 +137,8 @@ if ($hour < 12) {
   <!-- Rentals -->
 <?php
 
-include('assets/php/dbconnection.php');
-
 // Fetch rental data from the database
-$sql = "SELECT rental_id, pickup_date, rental_status, rental_duration FROM rental";
+$sql = "SELECT rental_id, pickup_date, rental_status, rental_duration, total_price  FROM rental";
 $result = $conn->query($sql);
 ?>
 
@@ -144,6 +156,7 @@ $result = $conn->query($sql);
                             <p class="card-text"><strong>Pickup Date:</strong> ' . $rental['pickup_date'] . '</p>
                             <p class="card-text"><strong>Status:</strong> ' . $rental['rental_status'] . '</p>
                             <p class="card-text"><strong>Rental Duration (days):</strong> ' . $rental['rental_duration'] . '</p>
+                            <p class="card-text"><strong>Rental Price (LKR):</strong> ' . $rental['total_price'] . '</p>
                             <button class="btn btn-danger delete-btn" data-rentalid="' . $rental['rental_id'] . '">Delete Rental</button>
                             <button class="btn btn-info mt-2 update-btn" data-rentalid="' . $rental['rental_id'] . '" data-toggle="modal" data-target="#paymentModal">Update Payment</button>
                         </div>

@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     if (isset($_FILES['receipt']) && $_FILES['receipt']['error'] == UPLOAD_ERR_OK) {
         $receipt_path = $_FILES['receipt']['name'];
-        $target_dir = "../../Photo/Paymentreciepts/"; 
+        $target_dir = "../../database/payment-slips/"; 
         $target_file = $target_dir . basename($receipt_path);
         
         
@@ -36,4 +36,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 $conn->close();
 ?>
-

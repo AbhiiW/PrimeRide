@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
-        $receiptUrl = "../../Photo/Paymentreciepts/" . $row['receipt_url']; 
+        $receiptUrl = "../../database/payment-slips/" . $row['receipt_url']; 
 
         
         if (!empty($row['receipt_url']) && file_exists($receiptUrl)) {
