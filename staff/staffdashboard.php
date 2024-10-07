@@ -5,103 +5,10 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="staff.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PrimeRide | Staff Dashboard</title>
-<style>
-/* General Styles */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
-    margin: 0;
-    padding: 0;
-}
-
-/* Dashboard Main Section */
-.container h1 {
-    color: #343a40;
-    margin-bottom: 30px;
-}
-
-/* Table Styles */
-.table {
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.table thead th {
-    background-color: #343a40;
-    color: white;
-}
-
-.table tbody tr:hover {
-    background-color: #f1f1f1;
-}
-
-/* Buttons */
-.btn {
-    border-radius: 25px;
-    font-size: 14px;
-    padding: 8px 12px;
-}
-
-.btn-success {
-    background-color: #28a745;
-    border: none;
-}
-
-.btn-primary {
-    background-color: #007bff;
-    border: none;
-}
-
-.btn-danger {
-    background-color: #dc3545;
-    border: none;
-}
-
-/* Modal Styles */
-.modal-header {
-    background-color: #343a40;
-    color: white;
-}
-
-.modal-content {
-    border-radius: 8px;
-}
-
-/* Gallery Management */
-.content {
-    margin-top: 30px;
-}
-
-.card {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.card img {
-    height: 250px;
-    object-fit: cover;
-}
-
-.card-title {
-    font-size: 18px;
-    margin-bottom: 15px;
-}
-
-.btn-danger {
-    font-size: 12px;
-}
-
-</style>
-
-
-
-
 </head>
 
 <body>

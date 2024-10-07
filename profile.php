@@ -55,6 +55,10 @@ if ($hour < 12) {
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
+        body{
+            margin-top:40px;
+
+        }
         .profile-picture {
             width: 150px;
             height: 150px;
@@ -120,7 +124,7 @@ if ($hour < 12) {
             </div>
             <div class="col-md-9">
                 <h3>Customer Profile</h3>
-                <form action="assets/php/update_password.php" method="POST">
+                <form action="assets/php/UserFunctions/update_password.php" method="POST">
                 <div class="mb-3">
                     <label for="password" class="form-label">Change Password</label>
                     <input type="password" class="form-control" id="password" name="password" placeholder="Enter new password" required>
@@ -133,7 +137,6 @@ if ($hour < 12) {
                 </form>
                 <hr>
                 
-            <!-- Rentals -->
   <!-- Rentals -->
 <?php
 
@@ -221,36 +224,6 @@ document.querySelectorAll('.delete-btn').forEach(button => {
 </script>
 
 
-<!-- Messages Section -->
-<h4>Messages</h4>
-<div class="accordion" id="messageAccordion">
-    <div class="accordion-item">
-        <h2 class="accordion-header" id="headingOne">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                Message #1: Issue with Order #1234
-            </button>
-        </h2>
-        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#messageAccordion">
-            <div class="accordion-body">
-                <p><strong>Your Message:</strong> I have an issue with my order delivery.</p>
-                <p><strong>Reply:</strong> We are looking into this and will get back to you shortly.</p>
-            </div>
-        </div>
-    </div>
-    <div class="accordion-item">
-        <h2 class="accordion-header" id="headingTwo">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                Message #2: Payment not processed
-            </button>
-        </h2>
-        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#messageAccordion">
-            <div class="accordion-body">
-                <p><strong>Your Message:</strong> My payment was not processed properly for order #1235.</p>
-                <p><strong>Reply:</strong> Please try again or contact customer service for assistance.</p>
-            </div>
-        </div>
-    </div>
-</div>
 
 
 <!-- Footer -->
