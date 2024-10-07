@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 07, 2024 at 04:26 PM
+-- Generation Time: Oct 07, 2024 at 10:06 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -43,8 +43,7 @@ CREATE TABLE `clients` (
 --
 
 INSERT INTO `clients` (`client_id`, `username`, `name`, `email`, `password`, `registration_date`, `last_login`, `profile_picture`) VALUES
-(1, 'Abhi', 'Abhiman Wijesekara', 'abhiww01@gmail.com', '$2y$10$qMZqz7HvookR10Szw9Q8buVdhSTIE3sStA5b/s5P7iLjOmkccTEGe', '2024-10-06 10:22:38', NULL, '1728210158_default.jpg'),
-(2, 'Senuja', 'Senuja Dewmith', 'senujadewmith@gmail.com', '$2y$10$mUGBOK/SF.pLeJeDLKIDhOAaBC1LdiKZTiyeBYs2E50kjZHFF2QeS', '2024-10-06 13:57:46', NULL, 'default.jpg');
+(4, 'Abhi', 'Abhi', 'abhiww01@gmail.com', '$2y$10$FICZRstG.e2oI8AfIomLee.JQSdtSP.O1LUXMhyGauwQ.5D/viuw2', '2024-10-07 19:30:09', NULL, 'default.jpg');
 
 -- --------------------------------------------------------
 
@@ -116,9 +115,7 @@ CREATE TABLE `offers` (
 --
 
 INSERT INTO `offers` (`id`, `title`, `description`, `price`, `original_price`, `image_path`, `created_at`) VALUES
-(1, '50% off on Smartphones', 'Get 50% off on the latest smartphones from top brands.', 499.99, 999.99, 'offer1.jpg', '2024-10-06 13:56:10'),
-(2, 'Buy 1 Get 1 Free - Shoes', 'Exclusive offer on branded shoes. Buy 1 and get another pair free.', 59.99, 119.99, 'offer1.jpg', '2024-10-06 13:56:10'),
-(3, 'Holiday Package Discount', 'Enjoy a 30% discount on our special holiday packages.', 699.00, 999.00, 'offer1.jpg', '2024-10-06 13:56:10');
+(2, 'Buy 1 Get 1 Free - Shoes', 'Exclusive offer on branded shoes. Buy 1 and get another pair free.', 50.00, 120.00, 'Yellow Brown Modern Car Rental Offer Instagram Post.png', '2024-10-06 13:56:10');
 
 -- --------------------------------------------------------
 
@@ -159,13 +156,6 @@ CREATE TABLE `rental` (
   `receipt_url` varchar(255) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `rental`
---
-
-INSERT INTO `rental` (`id`, `rental_id`, `vehicle_name`, `plate_number`, `model`, `total_price`, `customer_username`, `customer_name`, `customer_email`, `rental_duration`, `pickup_date`, `dropoff_date`, `rental_status`, `receipt_url`, `created_at`) VALUES
-(18, 716360, 'Toyota Prius', 'XYZ5678', '2024', 6000.00, 'Abhi', 'Abhiman Wijesekara', 'abhiww01@gmail.com', 2, '2024-10-25', '2024-10-27', 'Pending Payment', NULL, '2024-10-07 06:28:08');
 
 -- --------------------------------------------------------
 
@@ -276,7 +266,7 @@ ALTER TABLE `vehicles`
 -- AUTO_INCREMENT for table `clients`
 --
 ALTER TABLE `clients`
-  MODIFY `client_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `client_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `gallery`
@@ -294,7 +284,7 @@ ALTER TABLE `messages`
 -- AUTO_INCREMENT for table `offers`
 --
 ALTER TABLE `offers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `offer_orders`
@@ -306,7 +296,7 @@ ALTER TABLE `offer_orders`
 -- AUTO_INCREMENT for table `rental`
 --
 ALTER TABLE `rental`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `staff`
