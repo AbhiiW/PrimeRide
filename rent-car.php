@@ -1,5 +1,6 @@
 <?php
 include 'assets/php/dbconnection.php';
+session_start();
 
 $user_data = null;
 
