@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 07, 2024 at 12:05 PM
+-- Generation Time: Oct 07, 2024 at 04:26 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -123,6 +123,22 @@ INSERT INTO `offers` (`id`, `title`, `description`, `price`, `original_price`, `
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `offer_orders`
+--
+
+CREATE TABLE `offer_orders` (
+  `id` int(11) NOT NULL,
+  `offer_title` varchar(255) NOT NULL,
+  `offer_price` decimal(10,2) NOT NULL,
+  `offer_description` text NOT NULL,
+  `customer_username` varchar(255) NOT NULL,
+  `customer_email` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `rental`
 --
 
@@ -228,6 +244,12 @@ ALTER TABLE `offers`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `offer_orders`
+--
+ALTER TABLE `offer_orders`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `rental`
 --
 ALTER TABLE `rental`
@@ -273,6 +295,12 @@ ALTER TABLE `messages`
 --
 ALTER TABLE `offers`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `offer_orders`
+--
+ALTER TABLE `offer_orders`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `rental`
