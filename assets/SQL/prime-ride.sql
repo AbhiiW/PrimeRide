@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 06, 2024 at 11:42 PM
+-- Generation Time: Oct 07, 2024 at 12:05 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -132,7 +132,9 @@ CREATE TABLE `rental` (
   `vehicle_name` varchar(255) NOT NULL,
   `plate_number` varchar(50) NOT NULL,
   `model` varchar(255) NOT NULL,
+  `total_price` decimal(10,2) NOT NULL,
   `customer_username` varchar(255) NOT NULL,
+  `customer_name` varchar(255) NOT NULL,
   `customer_email` varchar(255) NOT NULL,
   `rental_duration` int(11) NOT NULL,
   `pickup_date` date NOT NULL,
@@ -141,6 +143,13 @@ CREATE TABLE `rental` (
   `receipt_url` varchar(255) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `rental`
+--
+
+INSERT INTO `rental` (`id`, `rental_id`, `vehicle_name`, `plate_number`, `model`, `total_price`, `customer_username`, `customer_name`, `customer_email`, `rental_duration`, `pickup_date`, `dropoff_date`, `rental_status`, `receipt_url`, `created_at`) VALUES
+(18, 716360, 'Toyota Prius', 'XYZ5678', '2024', 6000.00, 'Abhi', 'Abhiman Wijesekara', 'abhiww01@gmail.com', 2, '2024-10-25', '2024-10-27', 'Pending Payment', NULL, '2024-10-07 06:28:08');
 
 -- --------------------------------------------------------
 
@@ -269,7 +278,7 @@ ALTER TABLE `offers`
 -- AUTO_INCREMENT for table `rental`
 --
 ALTER TABLE `rental`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `staff`
