@@ -56,7 +56,7 @@
     <a href="bookingmanagement.php">Booking Management</a>
     <a href="staffmanagement.php">Staff Management</a>
     <a href="gallerymanagement.php">Gallery Management</a>
-    <a href="promotions.php">Promotions</a>
+    <a href="Promotions.php">Promotions</a>
   </div>
 
   <!-- Main Content Area -->

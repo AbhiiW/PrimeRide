@@ -9,8 +9,8 @@ $is_logged_in = isset($_SESSION['username']) || isset($_COOKIE['username']);
     <div class="container">
         <div class="d-flex flex-wrap align-items-center justify-content-between">
             <div class="d-flex align-items-center">
-                <a href="" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-                    <img src="assets/Photo/main/Ride logo.png" class="navlogo" alt="">
+                <a href="index.php" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                    <img src="assets/Photo/Logo.png" class="navlogo" alt="">
                 </a>
                 <h1>Prime Ride Car Rental</h1>
             </div>

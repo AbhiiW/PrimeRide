@@ -43,8 +43,5 @@
   <hr class="featurette-divider">
   <div class="container text-center mt-4">
     <p>© <span>Copyright</span> <strong class="px-1 sitename">PrimeRide</strong> <span>All Rights Reserved</span></p>
-    <div class="credits">
-      Designed by <a href=""></a>
-    </div>
   </div>
 </footer>

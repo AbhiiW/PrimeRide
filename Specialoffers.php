@@ -23,11 +23,7 @@
   <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="assets/Photo/main/1414.png" class="d-block w-100" alt="SUV">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>SUV Rentals</h5>
-          <p>Spacious and comfortable SUVs, perfect for long road trips with family or friends.</p>
-        </div>
+        <img src="assets/Photo/Drawer/Offer1.png" class="d-block w-100" alt="SUV">
       </div>
       <div class="carousel-item">
         <img src="assets/Photo/main/1414.png" class="d-block w-100" alt="Sedan">

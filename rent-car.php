@@ -1,6 +1,5 @@
 <?php
 include 'assets/php/dbconnection.php';
-session_start();
 
 $user_data = null;
 
@@ -46,6 +45,9 @@ if (isset($_SESSION['username'])) {
   <title>Prime Ride | Rent Car</title>
 
   <style>
+    body{
+      margin-top:100px;
+    }
     .car-card img {
       width: 100%;
       height: 200px;
@@ -66,35 +68,12 @@ if (isset($_SESSION['username'])) {
 
   <!-- Navigation Bar -->
   <?php include 'navigation.php'; ?>
-
-  <!-- Hero Section -->
-  <div class="drawer container drawersize"></div>
-  <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="assets/Photo/main/1414.png" class="d-block w-100" alt="">
-      </div>
-      <div class="carousel-item">
-        <img src="assets/Photo/main/1414.png" class="d-block w-100" alt="">
-      </div>
-      <div class="carousel-item">
-        <img src="assets/Photo/main/1414.png" class="d-block w-100" alt="">
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-  
+  <hr>
   <!-- Available cars -->
 <div class="container mt-5">
-    <h2 class="text-center mb-4">Available Cars</h2>
+    <h2 class="text-center mb-4">Available Vehicles</h2>
     <div class="row">
+      <hr>
 
       <?php
       // Fetch all available vehicles from the database
@@ -386,6 +365,30 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 </script>
+
+ <!--Drawer -->
+ <div class="drawer container drawersize"></div>
+  <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="assets/Photo/main/1414.png" class="d-block w-100" alt="">
+      </div>
+      <div class="carousel-item">
+        <img src="assets/Photo/main/1414.png" class="d-block w-100" alt="">
+      </div>
+      <div class="carousel-item">
+        <img src="assets/Photo/main/1414.png" class="d-block w-100" alt="">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
 
 
   <!-- Footer -->

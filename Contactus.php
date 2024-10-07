@@ -134,7 +134,7 @@
 
           <div class="mt-4">
             <h4>WhatsApp Mobile</h4>
-            <img src="assets/qr-code.png" alt="WhatsApp QR Code" class="img-fluid" />
+            <img src="" alt="WhatsApp QR Code" class="img-fluid" />
             <p>Scan the QR code to chat with us on WhatsApp.</p>
           </div>
 

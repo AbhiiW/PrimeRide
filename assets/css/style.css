@@ -5,7 +5,6 @@ body {
   padding: 0;
 }
 
-
 /* Header */
 .header {
   background-color: #d4002a;
@@ -119,8 +118,8 @@ body {
 }
 
 .carousel-item img {
-  margin-top: 90px;
-  height: 400px;
+  margin-top: 50px;
+  height: 700px;
   object-fit: cover;
   border-radius: 10px;
 }
@@ -201,7 +200,7 @@ p.mb-4 {
   color: var(--default-color);
 
 
-  background-color: #4a2c2a;
+  background-color: #d4002a;
 
   font-size: 14px;
   color: white;

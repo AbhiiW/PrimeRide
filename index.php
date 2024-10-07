@@ -17,26 +17,21 @@
   <?php include 'navigation.php'; ?>
 
   <!-- Image Drawer -->
+  
   <hr class="featurette-divider">
+
   <div class="drawer container drawersize"></div>
   <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="assets/Photo/main/1414.png" class="d-block w-100" alt="">
+        <img src="assets/Photo/Drawer/homedrawer3.png" class="d-block w-100" alt="">
       </div>
       <div class="carousel-item">
-        <img src="assets/Photo/main/1414.png" class="d-block w-100" alt="">
+        <img src="assets/Photo/Drawer/homedrawer2.png" class="d-block w-100" alt="">
       </div>
       <div class="carousel-item">
-        <img src="assets/Photo/main/1414.png" class="d-block w-100" alt="">
+        <img src="assets/Photo/Drawer/homedrawer1.png" class="d-block w-100" alt="">
       </div>
-      <div class="carousel-item">
-        <img src="assets/Photo/main/1414.png" class="d-block w-100" alt="">
-      </div>
-      <div class="carousel-item">
-        <img src="assets/Photo/main/1414.png" class="d-block w-100" alt="">
-      </div>
-    </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>
@@ -55,16 +50,16 @@
         <div class="col-lg-6">
           <div class="row g-3">
             <div class="col-6 text-start">
-              <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.1s" src="assets/Photo/main/car.jpg">
+              <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.1s" src="assets/Photo/Content/home1.jpg">
             </div>
             <div class="col-6 text-start">
-              <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.3s" src="assets/Photo/main/car.jpg" style="margin-top: 25%;">
+              <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.3s" src="assets/Photo/Content/home2.jpg" style="margin-top: 25%;">
             </div>
             <div class="col-6 text-end">
-              <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.5s" src="assets/Photo/main/car.jpg">
+              <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.5s" src="assets/Photo/Content/home3.jpg">
             </div>
             <div class="col-6 text-end">
-              <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.7s" src="assets/Photo/main/car.jpg">
+              <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.7s" src="assets/Photo/Content/home1.jpg">
             </div>
           </div>
         </div>
@@ -99,7 +94,7 @@
               </div>
             </div>
           </div>
-          <a class="btn btn-primary py-3 px-5 mt-2" href="Pages/about.php">Read More</a>
+          <a class="btn btn-primary py-3 px-5 mt-2" href="Aboutus.php">Read More</a>
         </div>
       </div>
     </div>
