@@ -96,7 +96,7 @@ include '../assets/php/dbconnection.php';
             while($row = $result->fetch_assoc()) {
                 // Construct the receipt URL
                 $receiptUrl = "../assets/Photo/paymentreciepts/{$row['receipt_url']}";
-                
+
                 echo "<tr>
                         <td>{$row['rental_id']}</td>
                         <td>{$row['customer_username']}</td>
@@ -115,6 +115,7 @@ include '../assets/php/dbconnection.php';
                                     <option value='Payment pending' " . ($row['rental_status'] == 'Payment pending' ? 'selected' : '') . ">Payment pending</option>
                                     <option value='Processing' " . ($row['rental_status'] == 'Processing' ? 'selected' : '') . ">Processing</option>
                                     <option value='In service' " . ($row['rental_status'] == 'In service' ? 'selected' : '') . ">In service</option>
+                                    <option value='Approved' " . ($row['rental_status'] == 'Approved' ? 'selected' : '') . ">Approved</option> <!-- New option added -->
                                 </select>
                         </td>
                         <td>
@@ -139,7 +140,6 @@ include '../assets/php/dbconnection.php';
       </tbody>
     </table>
 </div>
-
 
 <div class="modal fade" id="receiptModal" tabindex="-1" aria-labelledby="receiptModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
