@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 07, 2024 at 10:06 PM
+-- Generation Time: Oct 08, 2024 at 09:03 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -38,13 +38,6 @@ CREATE TABLE `clients` (
   `profile_picture` varchar(255) DEFAULT 'default.jpg'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `clients`
---
-
-INSERT INTO `clients` (`client_id`, `username`, `name`, `email`, `password`, `registration_date`, `last_login`, `profile_picture`) VALUES
-(4, 'Abhi', 'Abhi', 'abhiww01@gmail.com', '$2y$10$FICZRstG.e2oI8AfIomLee.JQSdtSP.O1LUXMhyGauwQ.5D/viuw2', '2024-10-07 19:30:09', NULL, 'default.jpg');
-
 -- --------------------------------------------------------
 
 --
@@ -57,15 +50,6 @@ CREATE TABLE `gallery` (
   `image_path` varchar(255) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `gallery`
---
-
-INSERT INTO `gallery` (`id`, `title`, `image_path`, `created_at`) VALUES
-(3, 'City Skyline', 'gallery.jpg', '2024-10-06 13:53:13'),
-(4, 'Forest Trail', 'gallery.jpg', '2024-10-06 13:53:13'),
-(5, 'Desert Dunes', 'gallery.jpg', '2024-10-06 13:53:13');
 
 -- --------------------------------------------------------
 
@@ -87,13 +71,6 @@ CREATE TABLE `messages` (
   `customer_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `messages`
---
-
-INSERT INTO `messages` (`id`, `subject`, `rental_type`, `first_name`, `last_name`, `mobile_number`, `email_address`, `date_range`, `message`, `privacy_policy`, `customer_id`) VALUES
-(1, 'General Inquiry', 'Short-term', 'Senuja', 'Dew', '077585987', 'abhiww01@gmail.com', '2000-05-02', 'AAAAA', 1, NULL);
-
 -- --------------------------------------------------------
 
 --
@@ -109,13 +86,6 @@ CREATE TABLE `offers` (
   `image_path` varchar(255) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `offers`
---
-
-INSERT INTO `offers` (`id`, `title`, `description`, `price`, `original_price`, `image_path`, `created_at`) VALUES
-(2, 'Buy 1 Get 1 Free - Shoes', 'Exclusive offer on branded shoes. Buy 1 and get another pair free.', 50.00, 120.00, 'Yellow Brown Modern Car Rental Offer Instagram Post.png', '2024-10-06 13:56:10');
 
 -- --------------------------------------------------------
 
@@ -170,13 +140,6 @@ CREATE TABLE `staff` (
   `staffpassword` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `staff`
---
-
-INSERT INTO `staff` (`id`, `staff_id`, `staffusername`, `staffpassword`) VALUES
-(7, '01', 'Abhi', '$2y$10$wBxtnHfHHpHAqpBqOY8QMO.LZW4rwz.MhYHDrgqwGC1hkh6fuwi5C');
-
 -- --------------------------------------------------------
 
 --
@@ -195,13 +158,6 @@ CREATE TABLE `vehicles` (
   `image_path` varchar(255) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `vehicles`
---
-
-INSERT INTO `vehicles` (`id`, `vehicle_name`, `model`, `seats`, `fuel_type`, `transmission`, `license_plate`, `price_perday`, `image_path`, `created_at`) VALUES
-(16, 'Toyota Prius', '2024', 4, '0', 'Auto', 'XYZ5678', 3000.00, '1-f7da73c3.png', '2024-10-06 19:19:52');
 
 --
 -- Indexes for dumped tables
@@ -266,25 +222,25 @@ ALTER TABLE `vehicles`
 -- AUTO_INCREMENT for table `clients`
 --
 ALTER TABLE `clients`
-  MODIFY `client_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `client_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `gallery`
 --
 ALTER TABLE `gallery`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `offers`
 --
 ALTER TABLE `offers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `offer_orders`
@@ -296,19 +252,19 @@ ALTER TABLE `offer_orders`
 -- AUTO_INCREMENT for table `rental`
 --
 ALTER TABLE `rental`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `staff`
 --
 ALTER TABLE `staff`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `vehicles`
 --
 ALTER TABLE `vehicles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -38,13 +38,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             } else {
                 
                 $_SESSION['error_message'] = 'Incorrect password!';
-                header('Location: ../../../staff/stafflogin.php');
+                header('Location: ../../../Controlpanel.php');
                 exit();
             }
         } else {
             
             $_SESSION['error_message'] = 'Username not found!';
-            header('Location: ../../../staff/stafflogin.php');
+            header('Location: ../../../Controlpanel.php');
             exit();
         }
     }

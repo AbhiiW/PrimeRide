@@ -56,7 +56,7 @@ if ($hour < 12) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body{
-            margin-top:40px;
+            margin-top:80px;
 
         }
         .profile-picture {
@@ -77,7 +77,7 @@ if ($hour < 12) {
         <div class="d-flex flex-wrap align-items-center justify-content-between">
             <div class="d-flex align-items-center">
                 <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-                    <img src="assets/Photo/main/Ride logo.png" class="navlogo" alt="">
+                    <img src="assets/Photo/logo.png" class="navlogo" alt="">
                 </a>
                 <h1>PrimeRide</h1>
             </div>
@@ -114,11 +114,13 @@ if ($hour < 12) {
                 <!-- Profile Picture -->
                 <div class="text-center">
                     <img src="assets/database/user-profiles-pic/<?php echo htmlspecialchars($profile_picture); ?>" class="profile-picture mb-3" alt="Profile Picture">
+                    
                     <!-- Profile Picture Update Form -->
-                    <form action="assets/php/UserFunctions/update_profile_picture.php" method="POST" enctype="multipart/form-data">
+                <form action="assets/php/UserFunctions/update_profile_picture.php" method="POST" enctype="multipart/form-data">
                         <label for="profilePicUpload" class="form-label">Update Profile Picture</label>
+                        <input type="hidden" name="client_id" value="<?php echo $client_id; ?>"> 
                         <input class="form-control" type="file" id="profilePicUpload" name="profilePicUpload" required>
-                        <button type="submit" class="btn btn-primary mt-2">Update</button>
+                         <button type="submit" class="btn btn-primary mt-2">Update</button>
                     </form>
                 </div>
             </div>

@@ -3,7 +3,7 @@
 <head>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PrimeRide| Staff Login </title>
@@ -16,7 +16,7 @@
       <div class="d-flex flex-wrap align-items-center justify-content-between">
         <div class="d-flex align-items-center">
           <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-            <img src="../assets/Photo/logo.png" class="navlogo" alt="">
+            <img src="assets/Photo/logo.png" class="navlogo" alt="">
           </a>
           <h1>PrimeRide Control Panel</h1>
         </div>               
@@ -47,7 +47,7 @@
                 unset($_SESSION['error_message']);
             }
             ?>
-            <form method="POST" action="../assets/php/StaffFunctions/staff_login.php">
+            <form method="POST" action="assets/php/StaffFunctions/staff_login.php">
               <div class="mb-3">
                 <label for="staffUsername" class="form-label">Username</label>
                 <input type="text" class="form-control" id="staffUsername" name="username" required placeholder="Enter your username">
@@ -69,7 +69,7 @@
 <?php if (isset($_SESSION['success_message'])): ?>
 <script>
   setTimeout(function() {
-    window.location.href = "../assets/php/StaffFunctions/staff_login.php";
+    window.location.href = "assets/php/StaffFunctions/staff_login.php";
   }, 2000); 
 </script>
 <?php endif; ?>
