@@ -112,17 +112,18 @@ if ($hour < 12) {
         <div class="row">
             <div class="col-md-3">
                 <!-- Profile Picture -->
-                <div class="text-center">
-                    <img src="assets/database/user-profiles-pic/<?php echo htmlspecialchars($profile_picture); ?>" class="profile-picture mb-3" alt="Profile Picture">
-                    
-                    <!-- Profile Picture Update Form -->
-                <form action="assets/php/UserFunctions/update_profile_picture.php" method="POST" enctype="multipart/form-data">
-                        <label for="profilePicUpload" class="form-label">Update Profile Picture</label>
-                        <input type="hidden" name="client_id" value="<?php echo $client_id; ?>"> 
-                        <input class="form-control" type="file" id="profilePicUpload" name="profilePicUpload" required>
-                         <button type="submit" class="btn btn-primary mt-2">Update</button>
-                    </form>
-                </div>
+<div class="text-center">
+    <img src="assets/database/user-profiles-pic/<?php echo htmlspecialchars($profile_picture); ?>" class="profile-picture mb-3" alt="Profile Picture">
+    
+    <!-- Profile Picture Update Form -->
+    <form action="assets/php/UserFunctions/update_profile_picture.php" method="POST" enctype="multipart/form-data">
+        <label for="profilePicUpload" class="form-label">Update Profile Picture</label>
+        <input type="hidden" name="client_id" value="<?php echo htmlspecialchars($client_id); ?>"> 
+        <input class="form-control" type="file" id="profilePicUpload" name="profilePicUpload" required>
+        <button type="submit" class="btn btn-primary mt-2">Update</button>
+    </form>
+</div>
+
             </div>
             <div class="col-md-9">
                 <h3>Customer Profile</h3>
@@ -142,9 +143,16 @@ if ($hour < 12) {
   <!-- Rentals -->
 <?php
 
-// Fetch rental data from the database
-$sql = "SELECT rental_id, pickup_date, rental_status, rental_duration, total_price  FROM rental";
-$result = $conn->query($sql);
+$sql = "SELECT rental_id, pickup_date, rental_status, rental_duration, total_price FROM rental WHERE customer_username = ?";
+$stmt = $conn->prepare($sql);
+if (!$stmt) {
+    die("Prepare failed: " . $conn->error);
+}
+
+$stmt->bind_param("s", $username);
+$stmt->execute();
+$result = $stmt->get_result();
+
 ?>
 
 <div class="content">
@@ -172,10 +180,11 @@ $result = $conn->query($sql);
             echo "<p>No rentals found.</p>";
         }
 
-        // Close the connection
+        $stmt->close();
         $conn->close();
         ?>
     </div>
+</div>
 
     <!-- Payment Modal -->
     <div class="modal fade" id="paymentModal" tabindex="-1" role="dialog" aria-labelledby="paymentModalLabel" aria-hidden="true">
