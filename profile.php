@@ -112,33 +112,35 @@ if ($hour < 12) {
         <div class="row">
             <div class="col-md-3">
                 <!-- Profile Picture -->
-<div class="text-center">
+                <div class="text-center">
+    
     <img src="assets/database/user-profiles-pic/<?php echo htmlspecialchars($profile_picture); ?>" class="profile-picture mb-3" alt="Profile Picture">
     
-    <!-- Profile Picture Update Form -->
+
     <form action="assets/php/UserFunctions/update_profile_picture.php" method="POST" enctype="multipart/form-data">
         <label for="profilePicUpload" class="form-label">Update Profile Picture</label>
-        <input type="hidden" name="client_id" value="<?php echo htmlspecialchars($client_id); ?>"> 
-        <input class="form-control" type="file" id="profilePicUpload" name="profilePicUpload" required>
+        <input class="form-control" type="file" id="profilePicUpload" name="profilePicUpload" accept="image/*" required>
         <button type="submit" class="btn btn-primary mt-2">Update</button>
     </form>
 </div>
 
             </div>
             <div class="col-md-9">
-                <h3>Customer Profile</h3>
-                <form action="assets/php/UserFunctions/update_password.php" method="POST">
-                <div class="mb-3">
-                    <label for="password" class="form-label">Change Password</label>
-                    <input type="password" class="form-control" id="password" name="password" placeholder="Enter new password" required>
-                </div>
-                 <div class="mb-3">
-                    <label for="confirmPassword" class="form-label">Confirm Password</label>
-                    <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Confirm new password" required>
-                </div>
-                <button type="submit" class="btn btn-success">Save Changes</button>
-                </form>
-                <hr>
+    <h3>Customer Profile</h3>
+    <form action="assets/php/UserFunctions/update-password.php" method="POST">
+        <div class="mb-3">
+            <label for="password" class="form-label">Change Password</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Enter new password" required>
+        </div>
+        <div class="mb-3">
+            <label for="confirmPassword" class="form-label">Confirm Password</label>
+            <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Confirm new password" required>
+        </div>
+        <button type="submit" class="btn btn-success">Save Changes</button>
+    </form>
+    <hr>
+</div>
+
                 
   <!-- Rentals -->
 <?php
