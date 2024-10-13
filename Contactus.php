@@ -15,6 +15,7 @@
       font-family: Arial, sans-serif;
       background-color: #f7f7f7;
       margin-top: 200px;
+      margin-bottom: 200px;
     }
 
     .form-section {
@@ -43,7 +44,7 @@
   <!-- Navigation Bar -->
   <?php include 'navigation.php'; ?>
 
-  <div class="container mt-5">
+  <div class="container mt-5" >
     <div class="row">
       <!-- Left Side: Contact Form -->
       <div class="col-lg-7">
