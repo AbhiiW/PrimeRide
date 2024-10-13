@@ -1,178 +1,100 @@
-/* General Styles */
 body {
+    margin: 0;
     font-family: Arial, sans-serif;
-    margin-top: 100px;
     background-color: #f8f9fa;
-}
-
-.sidebar {
-    width: 250px;
-    position: fixed;
-    height: 100%;
+  }
+  
+  .header {
     background-color: #d4002a;
-    color: #fff;
+    color: white;
+    padding: 1rem;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .header h1 {
+    font-size: 1.8rem;
+    margin-left: 1rem;
+  }
+  
+  .navlogo {
+    width: 50px;
+    height: auto;
+  }
+  
+  .header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .sidebar {
+    height: calc(100vh - 70px);
+    width: 220px;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    background-color: #495057;
     padding-top: 20px;
-}
-
-.sidebar a {
-    padding: 15px;
+    transition: 0.3s;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .sidebar a {
+    padding: 15px 25px;
     text-decoration: none;
-    color: #fff;
+    font-size: 18px;
+    color: #f8f9fa;
     display: block;
-    transition: background-color 0.3s ease;
-}
-
-.sidebar a:hover {
-    background-color: #a00020;
-}
-
-.content {
-    margin-left: 250px;
-    padding: 30px;
-    background-color: #fff;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-}
-
-/* Header Styles */
-header {
-    background-color: #d4002a;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
-}
-
-header h1 {
-    font-size: 28px;
-    margin: 0;
-}
-
-header img.navlogo {
-    height: 50px;
-    margin-right: 20px;
-}
-
-/* Table Styles */
-.table {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-}
-
-.table thead th {
+    transition: 0.3s;
+  }
+  
+  .sidebar a:hover {
     background-color: #d4002a;
     color: #fff;
-    padding: 15px;
-    text-align: center;
-}
-
-.table tbody td {
-    padding: 15px;
-    text-align: center;
+  }
+  
+  .sidebar a.active {
+    background-color: #17a2b8;
+    color: white;
+    font-weight: bold;
+  }
+  
+  
+  .sidebar a::before {
+    content: '•';
+    color: #6c757d;
+    margin-right: 10px;
+    font-size: 20px;
     vertical-align: middle;
-}
-
-.table tbody tr:hover {
-    background-color: #f1f1f1;
-}
-
-/* Form and Select Elements */
-select.form-select {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ced4da;
-    border-radius: 5px;
-    background-color: #fff;
-    transition: border-color 0.3s ease;
-}
-
-select.form-select:focus {
-    border-color: #80bdff;
-    outline: none;
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-}
-
-/* Buttons */
-button.btn {
-    font-size: 14px;
-    padding: 10px 15px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-button.btn-success {
-    background-color: #28a745;
-    border: none;
-    color: #fff;
-}
-
-button.btn-primary {
-    background-color: #d4002a;
-    border: none;
-    color: #fff;
-}
-
-button.btn-danger {
-    background-color: #dc3545;
-    border: none;
-    color: #fff;
-}
-
-button.btn:hover {
-    opacity: 0.9;
-}
-
-/* Modal Styles */
-.modal-header {
-    background-color: #d4002a;
-    color: white;
-}
-
-.modal-content {
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-/* Footer Styles */
-footer {
-    background-color: #d4002a;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
-footer p {
-    margin: 0;
-    font-size: 14px;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .content {
-        margin-left: 0;
-        padding: 20px;
-    }
-
+    display: inline-block;
+  }
+  
+  .sidebar a:hover::before {
+    color: #f8f9fa;
+  }
+  
+  section {
+    margin-left: 230px;
+    padding: 20px;
+    padding-top: 80px;
+  }
+  
+  
+  @media screen and (max-width: 768px) {
     .sidebar {
-        position: static;
-        width: 100%;
-        height: auto;
+      width: 100%;
+      height: auto;
+      position: relative;
+      top: 0;
     }
-
-    .table {
-        font-size: 12px;
+    .sidebar a {
+      text-align: center;
+      padding: 10px;
     }
-
-    button.btn {
-        font-size: 12px;
-        padding: 8px;
+    section {
+      margin-left: 0;
+      padding-top: 120px;
     }
-
-    select.form-select {
-        padding: 6px;
-    }
-}
+  }
+    
