@@ -160,8 +160,8 @@ include '../assets/php/dbconnection.php';
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $row['title']; ?></h5>
                             <p class="card-text"><?php echo $row['description']; ?></p>
-                            <p class="card-text text-success">$<?php echo number_format($row['price'], 2); ?>
-                                <span class="text-muted"><del>$<?php echo number_format($row['original_price'], 2); ?></del></span>
+                            <p class="card-text text-success">LKR<?php echo number_format($row['price'], 2); ?>
+                                <span class="text-muted"><del>LKR<?php echo number_format($row['original_price'], 2); ?></del></span>
                             </p>
                             <form action="../assets/php/AdminFunctions/DeleteOffer.php" method="POST" class="d-inline">
                                 <input type="hidden" name="id" value="<?php echo $row['id']; ?>">

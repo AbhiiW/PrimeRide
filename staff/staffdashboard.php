@@ -29,8 +29,7 @@
   <!-- Dashboard -->
   <div class="container my-5">
     <h1 class="text-center">Staff Dashboard</h1>
-
-    <!-- Bookings -->
+<!-- Bookings -->
 <?php
 include '../assets/php/dbconnection.php'; 
 ?>
@@ -41,6 +40,7 @@ include '../assets/php/dbconnection.php';
         <tr>
           <th>Rental ID</th>
           <th>Customer</th>
+          <th>Email Address</th>
           <th>Vehicle</th>
           <th>Plate Number</th>
           <th>Model</th>
@@ -54,7 +54,7 @@ include '../assets/php/dbconnection.php';
       <tbody>
         <?php
         // Fetch rental data
-        $sql = "SELECT rental_id, customer_username, vehicle_name, plate_number, model, rental_duration, 
+        $sql = "SELECT rental_id, customer_username, customer_email, vehicle_name, plate_number, model, rental_duration, 
                 pickup_date, dropoff_date, rental_status, receipt_url FROM rental"; 
         $result = $conn->query($sql);
 
@@ -67,6 +67,7 @@ include '../assets/php/dbconnection.php';
                 echo "<tr>
                         <td>{$row['rental_id']}</td>
                         <td>{$row['customer_username']}</td>
+                        <td>{$row['customer_email']}</td>
                         <td>{$row['vehicle_name']}</td>
                         <td>{$row['plate_number']}</td>
                         <td>{$row['model']}</td>
@@ -76,6 +77,7 @@ include '../assets/php/dbconnection.php';
                         <td>
                             <form method='post' action='../assets/php/AdminFunctions/ViewRentals.php'>
                                 <input type='hidden' name='rental_id' value='{$row['rental_id']}'>
+                                <input type='hidden' name='customer_email' value='{$row['customer_email']}'>
                                 <select class='form-select' name='rental_status'>
                                     <option value='Available' " . ($row['rental_status'] == 'Available' ? 'selected' : '') . ">Available</option>
                                     <option value='Out' " . ($row['rental_status'] == 'Out' ? 'selected' : '') . ">Out</option>
@@ -139,9 +141,7 @@ function showReceipt(receiptUrl) {
 </script>
 
 
-
     <!-- Update Gallery Section -->
-  
     <?php
 
 include '../assets/php/dbconnection.php';

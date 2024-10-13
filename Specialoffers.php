@@ -84,8 +84,8 @@
                 <div class="card-body text-center">
                   <h3 class="card-title"><?php echo $row['title']; ?></h3>
                   <p class="card-text"><?php echo $row['description']; ?></p>
-                  <h4 class="text-success">$<?php echo number_format($row['price'], 2); ?>
-                    <span class="text-muted"><del>$<?php echo number_format($row['original_price'], 2); ?></del></span>
+                  <h4 class="text-success">LKR<?php echo number_format($row['price'], 2); ?>
+                    <span class="text-muted"><del>LKR<?php echo number_format($row['original_price'], 2); ?></del></span>
                   </h4>
                   <a href="#" class="btn btn-primary mt-3 order-now-button"
                      data-offer-title="<?php echo htmlspecialchars($row['title'], ENT_QUOTES, 'UTF-8'); ?>"
