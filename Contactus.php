@@ -131,13 +131,7 @@
           <h3>PrimeRide Car Rental</h3>
           <p><i class="bi bi-telephone-fill"></i> +94 112 587 968</p>
           <p><i class="bi bi-envelope-fill"></i> info@primeride.com</p>
-          <p><i class="bi bi-geo-alt-fill"></i> 8 Main Street, Colombo, Sri Lanka</p>
-
-          <div class="mt-4">
-            <h4>WhatsApp Mobile</h4>
-            <img src="" alt="WhatsApp QR Code" class="img-fluid" />
-            <p>Scan the QR code to chat with us on WhatsApp.</p>
-          </div>
+          <p><i class="bi bi-geo-alt-fill"></i> Kurunegala Road,Katugasthota,Kandy</p>
 
           <div class="mt-4">
             <iframe

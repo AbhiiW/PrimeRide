@@ -106,27 +106,10 @@
       <h1 class="text-center mb-5"><span>Client's Reviews</span></h1>
       <div class="row">
         <!-- Review Cards -->
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="card h-100 text-center">
-            <img src="assets/Photo/main/178.jpeg" class="card-img-top rounded-circle mx-auto mt-3" alt="John Doe" style="width: 150px; height: 150px;">
-            <div class="card-body">
-              <h3 class="card-title">John Doe</h3>
-              <p class="card-text">"The service was amazing! The team was professional, and the process was seamless. I couldn't have asked for more."</p>
-              <div class="stars text-warning">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star-half-alt"></i> <!-- 4.5 stars -->
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Review Cards -->
+       
 <div class="col-lg-4 col-md-6 mb-4">
   <div class="card h-100 text-center">
-    <img src="assets/Photo/main/178.jpeg" class="card-img-top rounded-circle mx-auto mt-3" alt="John Doe" style="width: 150px; height: 150px;">
+    <img src="assets/Photo/Drawer/profile.jpg" class="card-img-top rounded-circle mx-auto mt-3" alt="John Doe" style="width: 150px; height: 150px;">
     <div class="card-body">
       <h3 class="card-title">John Doe</h3>
       <p class="card-text">"The service was amazing! The team was professional, and the process was seamless. I couldn't have asked for more."</p>
@@ -143,7 +126,7 @@
 
 <div class="col-lg-4 col-md-6 mb-4">
   <div class="card h-100 text-center">
-    <img src="assets/Photo/main/179.jpeg" class="card-img-top rounded-circle mx-auto mt-3" alt="Jane Smith" style="width: 150px; height: 150px;">
+    <img src="assets/Photo/Drawer/profile.jpg" class="card-img-top rounded-circle mx-auto mt-3" alt="Jane Smith" style="width: 150px; height: 150px;">
     <div class="card-body">
       <h3 class="card-title">Jane Smith</h3>
       <p class="card-text">"I was thoroughly impressed with the attention to detail. The staff went above and beyond to meet my needs!"</p>
@@ -160,7 +143,7 @@
 
 <div class="col-lg-4 col-md-6 mb-4">
   <div class="card h-100 text-center">
-    <img src="assets/Photo/main/180.jpeg" class="card-img-top rounded-circle mx-auto mt-3" alt="Emily Johnson" style="width: 150px; height: 150px;">
+    <img src="assets/Photo/Drawer/profile.jpg" class="card-img-top rounded-circle mx-auto mt-3" alt="Emily Johnson" style="width: 150px; height: 150px;">
     <div class="card-body">
       <h3 class="card-title">Emily Johnson</h3>
       <p class="card-text">"Fantastic experience! Everything was handled professionally, and I felt supported throughout the entire process."</p>

@@ -26,34 +26,26 @@
         <img src="assets/Photo/Drawer/Offer1.png" class="d-block w-100" alt="SUV">
       </div>
       <div class="carousel-item">
-        <img src="assets/Photo/main/1414.png" class="d-block w-100" alt="Sedan">
+        <img src="assets/Photo/Drawer/rental1.jpg" class="d-block w-100" alt="Sedan">
         <div class="carousel-caption d-none d-md-block">
           <h5>Sedan Rentals</h5>
           <p>Sleek and smooth sedans for business trips or comfortable city travel.</p>
         </div>
       </div>
       <div class="carousel-item">
-        <img src="assets/Photo/main/1414.png" class="d-block w-100" alt="Luxury Cars">
+        <img src="assets/Photo/Drawer/rental2.jpg" class="d-block w-100" alt="Luxury Cars">
         <div class="carousel-caption d-none d-md-block">
           <h5>Luxury Cars</h5>
           <p>Experience premium luxury for special occasions or high-end travel needs.</p>
         </div>
       </div>
       <div class="carousel-item">
-        <img src="assets/Photo/main/1414.png" class="d-block w-100" alt="Hatchback">
+        <img src="assets/Photo/Drawer/rental3.jpg" class="d-block w-100" alt="Hatchback">
         <div class="carousel-caption d-none d-md-block">
           <h5>Hatchback Rentals</h5>
           <p>Compact and fuel-efficient hatchbacks, ideal for navigating the city streets.</p>
         </div>
       </div>
-      <div class="carousel-item">
-        <img src="assets/Photo/main/1414.png" class="d-block w-100" alt="Van">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Van Rentals</h5>
-          <p>Spacious vans for large groups or transporting goods with ample space.</p>
-        </div>
-      </div>
-    </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>

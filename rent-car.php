@@ -372,10 +372,10 @@ document.addEventListener('DOMContentLoaded', function () {
   <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="assets/Photo/Drawer/rentcar3.png" class="d-block w-100" alt="">
+        <img src="assets/Photo/Drawer/rental1.jpg" class="d-block w-100" alt="">
       </div>
       <div class="carousel-item">
-        <img src="assets/Photo/Drawer/rentcar2.png" class="d-block w-100" alt="">
+        <img src="assets/Photo/Drawer/rental2.jpg" class="d-block w-100" alt="">
       </div>
       <div class="carousel-item">
         <img src="assets/Photo/Drawer/rentcar3.png" class="d-block w-100" alt="">

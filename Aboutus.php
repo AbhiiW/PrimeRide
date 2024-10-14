@@ -23,7 +23,7 @@
     <div class="container">
       <div class="row align-items-center">
         <div class="col-md-6">
-          <img src="assets/Photo/main/car.jpg" alt="PrimeRide Fleet" class="img-fluid rounded">
+          <img src="assets/Photo/Drawer/fleet1.jpg" alt="PrimeRide Fleet" class="img-fluid rounded">
         </div>
         <div class="col-md-6">
           <h2 class="display-6">About PrimeRide</h2>
