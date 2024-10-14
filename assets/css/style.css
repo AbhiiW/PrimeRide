@@ -13,11 +13,11 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1000; /* Ensure the header is on top */
+  z-index: 1000; 
 }
 
 .formst {
-  margin-top: 300px; /* Adjusted to ensure the form appears below both the header and submenu */
+  margin-top: 300px; 
 }
 
 .header a,
@@ -71,7 +71,7 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1000; /* Same z-index as header to make them on the same layer */
+  z-index: 1000; 
 }
 
 .submenudirect-wrapper {
@@ -79,9 +79,9 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 10px 0;
   position: fixed;
-  top: 90px; /* Positioned below the header */
+  top: 90px; 
   width: 100%;
-  z-index: 999; /* Below the header but above other content */
+  z-index: 999; 
 }
 
 .submenudirect {
