@@ -75,7 +75,7 @@ include '../assets/php/dbconnection.php';
                         <td>{$row['pickup_date']}</td>
                         <td>{$row['dropoff_date']}</td>
                         <td>
-                            <form method='post' action='../assets/php/AdminFunctions/ViewRentals.php'>
+                            <form method='post' action='../assets/php/StaffFunctions/ViewRentals.php'>
                                 <input type='hidden' name='rental_id' value='{$row['rental_id']}'>
                                 <input type='hidden' name='customer_email' value='{$row['customer_email']}'>
                                 <select class='form-select' name='rental_status'>
@@ -152,7 +152,7 @@ include '../assets/php/dbconnection.php';
   <h2>Gallery Management</h2>
   
   <!-- Form for uploading images -->
-  <form action="../assets/php/AdminFunctions/Update_gallery.php" method="POST" enctype="multipart/form-data">
+  <form action="../assets/php/StaffFunctions/Update_gallery.php" method="POST" enctype="multipart/form-data">
     <div class="mb-3">
       <label for="image" class="form-label">Choose an Image</label>
       <input type="file" class="form-control" name="image" id="image" required>
@@ -173,7 +173,7 @@ include '../assets/php/dbconnection.php';
             <img src="../assets/Photo/Galleryimg/<?php echo $row['image_path']; ?>" class="card-img-top" alt="<?php echo $row['title']; ?>">
             <div class="card-body">
               <h5 class="card-title"><?php echo $row['title']; ?></h5>
-              <form action="../assets/php/AdminFunctions/Delete_gallery_item.php" method="POST">
+              <form action="../assets/php/StaffFunctions/Delete_gallery_item.php" method="POST">
                 <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
                 <button type="submit" class="btn btn-danger">Delete</button>
               </form>
