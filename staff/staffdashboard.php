@@ -6,6 +6,7 @@
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="staff.css">
+  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PrimeRide | Staff Dashboard</title>
@@ -18,7 +19,7 @@
       <div class="d-flex flex-wrap align-items-center justify-content-between">
         <div class="d-flex align-items-center">
           <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-            <img src="../../assets/Photo/primelogo.png" class="navlogo" alt="PrimeRide Logo">
+            <img src="../assets/Photo/Logo.png" class="navlogo" alt="PrimeRide Logo">
           </a>
           <h1>PrimeRide Staff Dashboard</h1>
         </div>
@@ -93,7 +94,7 @@ include '../assets/php/dbconnection.php';
                         </td>
                         <td>
                             <button class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#receiptModal' onclick='showReceipt(\"$receiptUrl\")'>View Receipt</button>
-                            <form method='post' action='../assets/php/AdminFunctions/DeleteRental.php' style='display:inline;'>
+                            <form method='post' action='../assets/php/StaffFunctions/Delete_Rental.php' style='display:inline;'>
                                 <input type='hidden' name='rental_id' value='{$row['rental_id']}'>
                                 <button class='btn btn-danger' type='submit' onclick='return confirm(\"Are you sure you want to delete this booking?\");'>Delete</button>
                             </form>

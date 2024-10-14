@@ -11,17 +11,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $license_plate = $_POST['editLicensePlate'];
     $target_dir = "../assets/vehicles/";
 
-    // Handle image update if a new file is uploaded
+    
     if (!empty($_FILES["editVehicleImage"]["name"])) {
         $target_file = $target_dir . basename($_FILES["editVehicleImage"]["name"]);
         move_uploaded_file($_FILES["editVehicleImage"]["tmp_name"], $target_file);
 
-        // Update query with the new image path
+       
         $sql = "UPDATE vehicles SET vehicle_name='$vehicle_name', model='$model', seats='$seats', 
                 fuel_type='$fuel_type', transmission='$transmission', license_plate='$license_plate', 
                 image_path='$target_file' WHERE id=$id";
     } else {
-        // Update query without changing the image
+        
         $sql = "UPDATE vehicles SET vehicle_name='$vehicle_name', model='$model', seats='$seats', 
                 fuel_type='$fuel_type', transmission='$transmission', license_plate='$license_plate' 
                 WHERE id=$id";
